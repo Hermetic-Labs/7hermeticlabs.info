@@ -3,42 +3,41 @@
 **Business Language and Networking Kit**  
 *We got you covered.*
 
-This repository currently contains a local BLANKIT prototype inspired by the 7HermeticLaws Social Health system. It separates a future public brand surface from a local operator demo, but it does not yet preserve the donor's information architecture or feature parity. See `docs/MIGRATION_AUDIT.md` for the evidence and parity work required.
+This repository contains the BLANKIT migration of the 7HermeticLaws Social Health site. The donor's project-first information architecture, eight project lanes, focused contribution workspace, validation, campaign projection, contributor scorecard, asset libraries, HALT build shelf, and playtest history are preserved under the BLANKIT identity.
 
 ## Run locally
 
-Requires Node.js 20 or newer. There are no package dependencies.
+Requires Node.js 20 or newer. The public runtime is dependency-free.
 
-On Windows, double-click `Start BLANKIT.bat`. It checks Node/npm, builds the local files without installing packages, starts the preview, and opens the public landing in your default browser only after its page, stylesheet, and script respond successfully. Keep the console open while using it; Ctrl+C stops it. Failures leave a readable message and pause. The private workspace is never opened automatically. An optional `PORT` environment variable changes the default port (4173).
+On Windows, double-click `Start BLANKIT.bat`. It resolves its own directory, checks Node/npm, builds the site, waits for the migrated HTML, stylesheets, and scripts to respond, and then opens the public page in the default browser. Keep the console open; Ctrl+C stops the preview. An optional `PORT` environment variable changes the default port (4173).
+
+For development:
 
 ```powershell
+npm install
 npm run check
 npm run serve
 ```
 
-- Public landing: `http://127.0.0.1:4173/`
-- Local-only operator workspace: `http://127.0.0.1:4173/workspace/`
+Local URL: `http://127.0.0.1:4173/`
 
-The build produces two separate outputs:
-
-- `dist/public` — candidate for a later public deployment after hosting, indexing, and DNS decisions.
-- `dist/operator` — **must remain local/private** until the authentication decision gate in `docs/SECURITY.md` is complete.
+`npm run build` produces the static deployment candidate in `dist/public`.
 
 ## Repository map
 
-- `src/public` — BLANKIT public brand and landing surface.
-- `src/operator` — local operator prototype inspired by selected donor workflow concepts.
-- `src/data/workspace-data.js` — single source of truth for synthetic demo records and lifecycle semantics.
-- `src/adapters/contracts.js` — fail-closed boundaries for identity, portfolio, contributor, calendar, asset, publishing, and audit integrations.
-- `tests` — data, lifecycle, and disconnected-adapter checks.
-- `docs/DONOR_BASELINE.md` — exact donor inventory and source evidence.
-- `docs/DONOR_TO_BLANKIT.md` — capability-by-capability migration map.
-- `docs/MIGRATION_AUDIT.md` — evidence-based correction of the earlier migration claim and the work required for parity.
-- `docs/OPERATOR_HANDBOOK.md` — first-day and recurring operating SOPs.
-- `docs/SECURITY.md` — authentication and connector decision gate.
-- `docs/DEPLOYMENT_AND_RETIREMENT.md` — external decisions and gated donor retirement plan.
+- `src/public/index.html` — migrated public console and signed-link contributor workspace.
+- `src/public/site.js` — project configuration, project-scoped campaign projection, contribution workflow, asset tools, and focus behavior.
+- `src/public/scorecard.js` — signed contributor scorecard rendering and refresh behavior.
+- `src/public/site.css` and `scorecard.css` — migrated responsive visual systems.
+- `src/public/assets` — project, build/playtest, and BLANKIT identity assets used by the migrated surface.
+- `tests/migration.browser.mjs` — migrated donor browser acceptance suite with deterministic Graph fixtures.
+- `tests/launcher.test.mjs` — local readiness and safe browser-opening checks.
+- `docs/DONOR_BASELINE.md` — canonical donor source, routes, contracts, and rollback anchor.
+- `docs/SECURITY.md` — current public/signed-link boundary and deployment requirements.
+- `docs/DEPLOYMENT_AND_RETIREMENT.md` — domain, release, and donor cutover gates.
 
-## What is real versus synthetic
+## External behavior
 
-The interface, workflow rules, adapter contracts, documentation, and original RGB folded-cover brand system are implemented locally. Every campaign, content item, project lane, scorecard, outcome, task, and audit entry shown in the workspace is clearly synthetic. No social provider, inbox, analytics source, calendar, authentication service, DNS record, or hosting destination is connected.
+The public console reads the existing sanitized contributor-board endpoint. A valid signed contributor URL reads the existing public scorecard endpoint. The repository contains no API secret, provider token, password, or publishing credential. Contribution drafts stay in browser storage until the contributor explicitly opens and sends the prepared email. The interface performs no automatic publishing or account writes.
 
+The build has not been deployed to `blankit.dev`, and DNS has not been changed.

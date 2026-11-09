@@ -1,33 +1,25 @@
-# Security and authentication boundary
+# Security and access boundary
 
-## Current state
+## Current surface
 
-The public landing and operator workspace are separate build outputs. The operator workspace is a local synthetic prototype with `noindex` metadata. `noindex` is not access control; the operator output must not be placed on public hosting.
+BLANKIT builds one static public artifact. It contains two presentation modes inherited from Social Health:
 
-No authentication, accounts, passwords, sessions, recovery flow, provider tokens, webhook secrets, or social credentials exist in this repository. Every external adapter fails closed.
+- the public-safe project console;
+- the contributor scorecard, activated only when a URL supplies `contributor`, `expires`, and `signature` parameters.
 
-## Decision gate before private deployment
+The browser sends those signed values to the existing public Graph scorecard endpoint. The backend remains responsible for signature validation and expiry. No signing secret, account credential, provider token, or session secret is stored in this repository.
 
-The founder must select an owned authentication approach. Entra is explicitly not assumed. The selected implementation must provide proven primitives for:
+The public console reads only the existing sanitized contributor-board endpoint. Contribution drafts use project-keyed browser storage. Opening a prepared email is an explicit contributor action; the site does not send messages or publish content automatically.
 
-- password hashing if passwords are used (never custom cryptography);
-- secure, rotating, server-side or signed sessions with revocation;
-- email/identity verification and recovery;
-- MFA or passkeys where appropriate;
-- rate limiting, brute-force protection, CSRF defenses, and secure cookies;
-- roles at minimum for founder/admin, operator, reviewer, and contributor;
-- tenant/project isolation and object-level authorization;
-- audit events for sign-in, role, connector, approval, scheduling, publication, and correction actions;
-- secret storage outside source and browser storage;
-- backup, incident response, access removal, and recovery testing.
+## Deployment requirements
 
-## Connector gate
+Before `blankit.dev` receives this build:
 
-Each provider needs a separate decision covering account owner, application owner, scopes, token storage, renewal, target verification, harmless read proof, write authority, revocation, and receipt storage. “Configured,” “authorized,” “target verified,” “read proven,” and “write proven” are distinct states.
+1. Confirm the canonical host and whether the current `noindex` policy remains.
+2. Permit the chosen BLANKIT origin on the public Graph endpoints or provide a same-origin read proxy.
+3. Verify signed-link success, incomplete-link handling, expired/invalid access, and unavailable-service behavior from the deployed origin.
+4. Confirm every external build/reference URL remains intended for public use.
+5. Verify CSP, referrer policy, TLS, caching, and rollback behavior on the chosen host.
+6. Keep private Graph, provider, inbox, calendar, and publishing capabilities outside the static artifact.
 
-No connector may turn an internal status change into an external action without explicit authority at the action boundary. Success is recorded only from a durable provider receipt.
-
-## Deployment boundary
-
-The public build may later be deployed alone. The operator build requires authentication and authorization first. A host-level route rule, separate project, or separate origin should enforce this split; relying on an unlinked URL is not acceptable.
-
+Any future administrative or write-capable surface requires a separate authenticated design with least-privilege roles, secure sessions, CSRF protection, rate limits, secret storage, durable audit records, revocation, and backup/recovery testing.

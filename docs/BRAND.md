@@ -1,21 +1,13 @@
-# Blankit brand system
+# BLANKIT identity in Social Health
 
-## Primary lockup
+## Lockup
 
-**BLANKIT**  
-*We got you covered.*
+The site identity is **BLANKIT**, with **Social Health** as the product qualifier. The folded-cover mark uses red, green, and blue layers on the migrated donor's dark console. The phrase *We got you covered.* appears in the release-boundary identity card.
 
-The founder-selected tagline is always italic beneath the BLANKIT wordmark in the principal lockup. `blankit.dev` may appear as the destination qualifier, but not as a replacement for the brand name.
+The BLANKIT mark lives at `src/public/assets/blankit-mark.svg`; the social preview composition lives at `src/public/assets/blankit-social-health-og.svg`.
 
-## Mark
+## Content identity
 
-The primary mark is an original folded-cover geometry: three red, green, and blue bands share a dark fold, suggesting a blanket edge, a compact “B,” and layered business coverage. The neutral bone/charcoal system carries most of the interface so RGB is structural rather than decorative.
+Project marks and Hermetic Labs attribution inside project lanes remain content owned by those projects. They are not the BLANKIT site identity. The header, metadata, footer, site mark, canonical destination, and contributor document title use BLANKIT.
 
-## Lockup studies
-
-- **Primary:** folded-cover mark + BLANKIT + italic tagline. Adopted for this framework.
-- **Horizontal banner study:** oversized layered bands with the wordmark aligned to the protected edge. Used in the public hero composition; not a separate logo.
-- **Operator compact study:** mark + BLANKIT + italic tagline + small OPS qualifier. Used only in the local workspace.
-
-No Hermetic Labs logo, project mark, or donor asset is part of the Blankit identity.
-
+The migration retains the donor's dark high-contrast layout, signal-green state color, project-first navigation, focused workspaces, and scorecard presentation.

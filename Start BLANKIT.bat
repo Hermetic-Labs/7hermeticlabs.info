@@ -30,8 +30,8 @@ echo  npm:
 call npm.cmd --version
 if errorlevel 1 goto :npm_missing
 echo.
-echo  No package installation is needed; BLANKIT has no package dependencies.
-echo  Starting the local preview only. No external service will be connected.
+echo  No runtime package installation is needed for the BLANKIT preview.
+echo  Starting the migrated local site. It does not publish or write externally.
 echo.
 echo  Building the local preview. The public page will open when it is ready.
 echo  The server will print the URLs using its selected port.

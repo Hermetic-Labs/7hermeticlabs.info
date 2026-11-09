@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Local-first public brand surface and private operator workspace for Blankit.",
+  "description": "BLANKIT migration of the Social Health public coordination site.",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "test": "node tests/workflow.test.mjs && node tests/launcher.test.mjs",
+    "test": "node tests/launcher.test.mjs && node tests/migration.browser.mjs",
     "check": "npm run test && npm run build",
     "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.58.2"
   },
   "engines": {
     "node": ">=20"

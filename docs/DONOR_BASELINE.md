@@ -58,21 +58,17 @@ The backend confirms these reusable contracts:
 - Review/publish gate: approval, source/legal basis where applicable, no open blockers or holds, required approvals complete, destination verified, and no attempt to mutate an already published draft.
 - Contributor scorecard: weekly goals, score, rank/cohort, wins, improvements, manager note, assignments, milestones, feedback, and next action.
 
-## Dependencies deliberately not migrated as live bindings
+## External dependencies and boundaries
 
-- Hermetic Graph company endpoint and tool profiles.
-- Susan-specific ownership, email address, and operator language.
-- Outlook social calendar and Microsoft Graph.
-- SharePoint lists and asset paths.
-- Azure Blob control store.
-- Meta, LinkedIn, YouTube, Discord, or any other social-provider credentials/accounts.
-- Project-specific private records, contacts, campaign copy, unpublished assets, build packages, and playtest evidence.
-- Signed contributor links and their secret material.
-- Hermetic Labs logos, project marks, and company-specific visual language.
+- The frontend reads the sanitized Hermetic Graph contributor-board endpoint.
+- Signed contributor links are validated by the Graph scorecard endpoint; secret material is not present in the frontend.
+- Outlook, Microsoft Graph, SharePoint, Azure Blob, and social-provider accounts are supporting backend concerns, not browser dependencies in this source tree.
+- The checked-in project marks, public playtest evidence, and public build links are part of the donor surface.
+- Private contacts, unpublished records, provider credentials, and signing secrets remain outside the frontend.
 
 ## Styling and assets
 
-The donor is a dark, high-contrast console with neon signal green and an RGB identity. Its source includes a 7HL RGB mark plus project-specific marks, media, build links, and an IP library. Blankit retained only the structural idea of an RGB signal and created an original red/green/blue folded-cover identity on a neutral bone/charcoal system. No donor logo or project asset was copied.
+The donor is a dark, high-contrast console with signal green and an RGB identity. Its source includes a 7HL RGB mark plus project-specific marks, media, build links, and an IP library. These project assets and interaction surfaces are part of the migration baseline; the site-level identity is replaced separately by BLANKIT.
 
 ## Evidence and rollback
 

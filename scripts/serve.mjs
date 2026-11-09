@@ -4,7 +4,7 @@ import { extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { openReadyPreview } from "./open-preview.mjs";
 
-const root = resolve(fileURLToPath(new URL("../dist", import.meta.url)));
+const root = resolve(fileURLToPath(new URL("../dist/public", import.meta.url)));
 const port = Number(process.env.PORT || 4173);
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
   console.error("BLANKIT PORT must be a whole number from 1 to 65535.");
@@ -21,10 +21,8 @@ const types = {
 
 function resolveRequest(urlPath) {
   const pathname = decodeURIComponent(urlPath.split("?")[0]);
-  if (pathname === "/") return join(root, "public", "index.html");
-  if (pathname === "/workspace" || pathname === "/workspace/") return join(root, "operator", "index.html");
-  if (pathname.startsWith("/workspace/")) return join(root, "operator", pathname.slice(11));
-  return join(root, "public", pathname);
+  if (pathname === "/") return join(root, "index.html");
+  return join(root, pathname);
 }
 
 const server = createServer(async (request, response) => {
@@ -55,7 +53,6 @@ server.on("error", (error) => {
 
 server.listen(port, "127.0.0.1", async () => {
   console.log(`Blankit local preview: http://127.0.0.1:${port}`);
-  console.log(`Operator workspace: http://127.0.0.1:${port}/workspace/`);
   if (process.argv.includes("--open")) {
     try {
       await openReadyPreview(`http://127.0.0.1:${port}/`);
