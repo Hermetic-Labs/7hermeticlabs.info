@@ -9,6 +9,8 @@ This repository is the local extraction and rebrand framework for `blankit.dev`.
 
 Requires Node.js 20 or newer. There are no package dependencies.
 
+On Windows, double-click `Start BLANKIT.bat` for the same local preview with prerequisite checks and clear startup guidance.
+
 ```powershell
 npm run check
 npm run serve
