@@ -2,17 +2,17 @@
 
 ## BLANKIT destination decisions
 
-Before deployment, confirm:
+The selected static host is GitHub Pages, deployed from the public `MrDwayneTillman/blankit.dev` repository by GitHub Actions. Before domain cutover, confirm:
 
 - the `blankit.dev` DNS owner and canonical apex/`www` policy;
-- the static host for `dist/public` and its rollback mechanism;
+- the GitHub Pages deployment for `dist/public` and its rollback mechanism;
 - whether the inherited `noindex, nofollow, noarchive` policy remains for launch;
 - Graph CORS or same-origin proxy support for the BLANKIT host;
 - public build/download/reference URLs that should remain unchanged;
 - analytics, privacy, CSP, and cache policy;
 - ownership of the BLANKIT email destination if the existing assignment recipient will change.
 
-No deployment or DNS change is part of the local migration commit.
+The exact Namecheap additions and preserved iCloud Mail records are documented in `GITHUB_PAGES_AND_DNS.md`.
 
 ## Release gates
 
