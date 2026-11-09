@@ -1,0 +1,17 @@
+{
+  "name": "blankit-framework",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first public brand surface and private operator workspace for Blankit.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node tests/workflow.test.mjs",
+    "check": "npm run test && npm run build",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

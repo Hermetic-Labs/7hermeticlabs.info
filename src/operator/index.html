@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#ece9e1">
+  <title>Blankit Operator Workspace — Local Framework</title>
+  <link rel="stylesheet" href="operator.css">
+</head>
+<body>
+  <a class="skip-link" href="#workspace-main">Skip to workspace</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Workspace navigation">
+      <div class="sidebar-brand">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Blankit folded cover mark">
+          <path class="band red" d="M8 8h30l18 11-18 11H8z"/>
+          <path class="band green" d="M8 22h30l18 11-18 11H8z"/>
+          <path class="band blue" d="M8 36h30l18 11-18 11H8z"/>
+          <path class="fold" d="M38 8v50l18-11V19z"/>
+        </svg>
+        <span><b>BLANKIT</b><em>We got you covered.</em><small>OPS</small></span>
+      </div>
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="workspace-nav">Menu</button>
+      <nav id="workspace-nav">
+        <p>Workspace</p>
+        <button type="button" data-view="overview" aria-current="page"><span>⌂</span>Overview</button>
+        <button type="button" data-view="content"><span>▤</span>Content</button>
+        <button type="button" data-view="calendar"><span>□</span>Calendar</button>
+        <button type="button" data-view="campaigns"><span>◎</span>Campaigns</button>
+        <button type="button" data-view="contributions"><span>◇</span>Contribution studio</button>
+        <p>System</p>
+        <button type="button" data-view="library"><span>◫</span>Brand library</button>
+        <button type="button" data-view="operations"><span>↗</span>Operations</button>
+        <button type="button" data-view="onboarding"><span>✓</span>Operator start</button>
+      </nav>
+      <div class="sidebar-foot">
+        <span class="offline-dot"></span>
+        <div><b>Local framework</b><small>No providers connected</small></div>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div>
+          <p id="view-kicker">CONTROL DESK / SYNTHETIC DATA</p>
+          <h1 id="view-title">Overview</h1>
+        </div>
+        <div class="top-actions">
+          <button class="search-trigger" type="button" data-action="focus-search" aria-label="Focus workspace search">⌕ <span>Search</span></button>
+          <div class="operator-chip"><span>BO</span><div><b>Blankit operator</b><small>Unassigned role</small></div></div>
+        </div>
+      </header>
+
+      <div class="boundary-banner" role="note">
+        <span>PRIVATE BOUNDARY</span>
+        <p>This is a local synthetic workspace—not an authenticated console. It has no account access, publishing, analytics, or live connectors.</p>
+        <button type="button" data-action="show-security">Security gate</button>
+      </div>
+
+      <main id="workspace-main" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <dialog id="detail-dialog" class="detail-dialog">
+    <div id="detail-content"></div>
+    <button class="dialog-close" type="button" data-action="close-dialog" aria-label="Close details">×</button>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+
