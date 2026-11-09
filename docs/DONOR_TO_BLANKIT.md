@@ -1,5 +1,7 @@
 # Donor-to-Blankit capability map
 
+> **Superseded assessment (2026-11-09):** The status labels below overstate what was implemented. The evidence-based comparison in [MIGRATION_AUDIT.md](/D:/Blankit/docs/MIGRATION_AUDIT.md) is authoritative. The current application is a new prototype inspired by the donor with partial behavior reimplementation; it is not a completed migration.
+
 | Donor capability | Blankit destination | Current status | Notes / gap |
 | --- | --- | --- | --- |
 | Public-safe Social Health hero and release boundary | `src/public` plus operator boundary banner | Migrated and rebranded | Public landing explains the product; private workspace states the boundary continuously. |

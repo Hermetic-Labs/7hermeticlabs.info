@@ -27,14 +27,14 @@ The donor contains two major presentation modes.
 
 ### Public-safe console
 
-1. Hero and three-stage release boundary: private work → approved signal → recorded response.
-2. Status rail: source discipline, visibility, authority, and Graph read state.
-3. Portfolio map with eight fixed project lanes and project-specific vocabulary.
-4. Project summary panel with primary job, public state, next gate, products, and an entry into a focused contribution studio.
+1. Runtime project-first portfolio map with eight project lanes and project-specific vocabulary.
+2. Project summary panel with primary job, public state, next gate, products, and an entry into a focused contribution studio.
+3. Hero and three-stage release boundary: private work → approved signal → recorded response.
+4. Status rail: source discipline, visibility, authority, and Graph read state.
 5. Project-specific identity/iconology, campaign pulse, and sanitized assignments.
 6. A five-step contribution studio: scope → source/evidence → build → safety review → handoff.
 7. HALT-specific build shelf and detailed playtesting evidence/history.
-8. Truth pipeline, authority model, channel matrix, privacy boundary, and closing operating summary.
+8. Truth pipeline, authority model, privacy boundary, and closing operating summary.
 
 ### Contributor scorecard
 
@@ -76,7 +76,7 @@ The donor is a dark, high-contrast console with neon signal green and an RGB ide
 
 ## Evidence and rollback
 
-The donor has its own Playwright acceptance suite in `test-social-health.mjs`, covering desktop/mobile behavior, fixed project lanes, campaign projection, workspace isolation, draft persistence, handoff preparation, Graph degradation, scorecard rendering, and overflow. The donor remains preserved at commit `71caa76`; rollback is `git checkout 71caa76 -- social-health` within a clean recovery worktree, not a destructive reset of an active worktree.
+The donor has its own Playwright acceptance suite in `test-social-health.mjs`. The inspected suite uses a 390×844 mobile viewport and mocked successful Graph responses. It covers project lanes/order, campaign projection, workspace isolation, draft persistence, handoff preparation, scorecard rendering, and overflow; this file does not establish desktop behavior, live Graph health, degradation handling, or expired-link behavior. The donor remains preserved at commit `71caa76`; rollback is `git checkout 71caa76 -- social-health` within a clean recovery worktree, not a destructive reset of an active worktree.
 
 Baseline SHA-256 manifest captured during extraction:
 

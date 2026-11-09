@@ -33,14 +33,17 @@ echo.
 echo  No package installation is needed; BLANKIT has no package dependencies.
 echo  Starting the local preview only. No external service will be connected.
 echo.
-echo  Public landing:      http://127.0.0.1:4173/
-echo  Operator workspace:  http://127.0.0.1:4173/workspace/
+echo  Building the local preview. The public page will open when it is ready.
+echo  The server will print the URLs using its selected port.
 echo.
 echo  Keep this window open while using BLANKIT.
 echo  Press Ctrl+C to stop the preview.
 echo.
 
-call npm.cmd run serve
+call npm.cmd run build
+if errorlevel 1 goto :build_error
+
+call npm.cmd run serve -- --open
 set "BLANKIT_EXIT_CODE=%ERRORLEVEL%"
 if "%BLANKIT_EXIT_CODE%"=="0" goto :finished
 
@@ -80,6 +83,12 @@ echo.
 echo  package.json was not found in:
 echo  %BLANKIT_ROOT%
 echo  Keep Start BLANKIT.bat in the BLANKIT project folder.
+goto :failure_pause
+
+:build_error
+echo.
+echo  BLANKIT could not build the local preview. Review the error above.
+echo  The server was not started and no browser page was opened.
 goto :failure_pause
 
 :failure_pause

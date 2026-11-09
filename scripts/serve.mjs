@@ -2,9 +2,14 @@ import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import { extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { openReadyPreview } from "./open-preview.mjs";
 
 const root = resolve(fileURLToPath(new URL("../dist", import.meta.url)));
 const port = Number(process.env.PORT || 4173);
+if (!Number.isInteger(port) || port < 1 || port > 65535) {
+  console.error("BLANKIT PORT must be a whole number from 1 to 65535.");
+  process.exit(1);
+}
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -41,8 +46,25 @@ const server = createServer(async (request, response) => {
   }
 });
 
-server.listen(port, "127.0.0.1", () => {
+server.on("error", (error) => {
+  console.error(error.code === "EADDRINUSE"
+    ? `BLANKIT could not start: port ${port} is already in use. Stop the other preview or choose another PORT. No browser was opened.`
+    : `BLANKIT could not start: ${error.message}`);
+  process.exitCode = 1;
+});
+
+server.listen(port, "127.0.0.1", async () => {
   console.log(`Blankit local preview: http://127.0.0.1:${port}`);
   console.log(`Operator workspace: http://127.0.0.1:${port}/workspace/`);
+  if (process.argv.includes("--open")) {
+    try {
+      await openReadyPreview(`http://127.0.0.1:${port}/`);
+      console.log("Public page ready; opened in your default browser. Keep this console open while using BLANKIT.");
+    } catch (error) {
+      console.error(`BLANKIT could not open the public preview: ${error.message}`);
+      server.close();
+      process.exitCode = 1;
+    }
+  }
 });
 
