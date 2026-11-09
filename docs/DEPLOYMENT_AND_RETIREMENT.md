@@ -2,7 +2,7 @@
 
 ## BLANKIT destination decisions
 
-The selected static host is GitHub Pages, deployed from the public `MrDwayneTillman/blankit.dev` repository by GitHub Actions. Before domain cutover, confirm:
+The selected static host is GitHub Pages, deployed from the public `Hermetic-Labs/blankit.dev` repository by GitHub Actions. Before domain cutover, confirm:
 
 - the `blankit.dev` DNS owner and canonical apex/`www` policy;
 - the GitHub Pages deployment for `dist/public` and its rollback mechanism;

@@ -25,7 +25,7 @@ Local URL: `http://127.0.0.1:4173/`
 
 ## GitHub Pages
 
-The canonical repository is `https://github.com/MrDwayneTillman/blankit.dev`. Pushes to `main` build and deploy the static site through GitHub Actions. The custom-domain and Namecheap record plan is in `docs/GITHUB_PAGES_AND_DNS.md`.
+The canonical repository is `https://github.com/Hermetic-Labs/blankit.dev`. Pushes to `main` build and deploy the static site through GitHub Actions. The custom-domain and Namecheap record plan is in `docs/GITHUB_PAGES_AND_DNS.md`.
 
 ## Repository map
 

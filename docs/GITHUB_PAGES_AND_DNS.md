@@ -2,7 +2,7 @@
 
 ## Publishing home
 
-- Repository: `https://github.com/MrDwayneTillman/blankit.dev`
+- Repository: `https://github.com/Hermetic-Labs/blankit.dev`
 - Pages source: GitHub Actions workflow in `.github/workflows/pages.yml`
 - Canonical domain: `blankit.dev`
 - `www` policy: redirect through the configured GitHub Pages custom domain
@@ -19,7 +19,7 @@ The domain currently uses `dns1.registrar-servers.com` and `dns2.registrar-serve
 | A | `@` | `185.199.109.153` | Automatic |
 | A | `@` | `185.199.110.153` | Automatic |
 | A | `@` | `185.199.111.153` | Automatic |
-| CNAME | `www` | `mrdwaynetillman.github.io` | Automatic |
+| CNAME | `www` | `hermetic-labs.github.io` | Automatic |
 
 Optional IPv6 records:
 
