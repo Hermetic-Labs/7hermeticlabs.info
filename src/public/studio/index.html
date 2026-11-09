@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#080a0f">
+  <link rel="icon" type="image/png" href="../assets/ip-library/hermetic-labs-icon.png">
+  <title>7 Hermetic Labs — Communications Studio</title>
+  <meta name="description" content="The public-safe communications studio for 7 Hermetic Labs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://7hermeticlabs.info/studio/">
+  <meta property="og:title" content="7 Hermetic Labs — Communications Studio">
+  <meta property="og:description" content="Turn product truth into clear public signal.">
+  <meta property="og:image" content="https://7hermeticlabs.info/assets/ip-library/hermetic-labs-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="7 Hermetic Labs communications studio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="7 Hermetic Labs — Communications Studio">
+  <meta name="twitter:description" content="Turn product truth into clear public signal.">
+  <meta name="twitter:image" content="https://7hermeticlabs.info/assets/ip-library/hermetic-labs-banner.png">
+  <link rel="stylesheet" href="../site.css?v=20261109-2">
+  <link rel="stylesheet" href="../scorecard.css?v=20261109-2">
+  <script src="../site.js?v=20261109-2" defer></script>
+  <script src="../scorecard.js?v=20261109-2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+
+  <main id="contributorWorkspace" class="contributor-workspace" hidden aria-live="polite">
+    <div class="workspace-orbit workspace-orbit-one" aria-hidden="true"></div>
+    <div class="workspace-orbit workspace-orbit-two" aria-hidden="true"></div>
+    <div class="workspace-frame">
+      <header class="workspace-header">
+        <div>
+          <p class="workspace-eyebrow">7 Hermetic Labs · Contributor workspace</p>
+          <h1 id="scorecardTitle">Loading scorecard…</h1>
+          <p id="scorecardSubtitle" class="workspace-subtitle">Connecting securely to Susan’s contributor graph.</p>
+        </div>
+        <div class="workspace-actions">
+          <span id="scorecardFreshness" class="live-pill"><span aria-hidden="true"></span>Connecting</span>
+          <button id="refreshScorecard" class="refresh-button" type="button">Refresh</button>
+        </div>
+      </header>
+
+      <div id="scorecardLoading" class="workspace-message">
+        <div class="loading-mark" aria-hidden="true"></div>
+        <div><strong>Preparing your weekly view</strong><p>Campaign, goals, ranking, and current assignments are loading.</p></div>
+      </div>
+
+      <div id="scorecardError" class="workspace-message workspace-error" hidden>
+        <div class="error-mark" aria-hidden="true">!</div>
+        <div><strong id="scorecardErrorTitle">This link needs attention</strong><p id="scorecardErrorMessage"></p></div>
+      </div>
+
+      <div id="scorecardContent" hidden>
+        <section class="scorecard-overview" aria-label="Weekly overview">
+          <article class="campaign-card">
+            <div class="card-kicker">Current campaign</div>
+            <div class="campaign-heading">
+              <h2 id="campaignTitle">Campaign pending</h2>
+              <span id="campaignStatus" class="status-chip">Planning</span>
+            </div>
+            <p id="campaignSummary" class="campaign-summary"></p>
+            <p id="campaignDetails" class="campaign-details"></p>
+            <dl id="campaignFacts" class="campaign-facts"></dl>
+            <div id="campaignPlatforms" class="platform-list" aria-label="Campaign platforms"></div>
+          </article>
+
+          <div class="metric-grid" aria-label="Performance summary">
+            <article class="metric-card metric-primary"><span>This week</span><strong id="thisWeekScore">—</strong><small>score</small></article>
+            <article class="metric-card"><span>Last week</span><strong id="lastWeekScore">—</strong><small>score</small></article>
+            <article class="metric-card"><span>Last week rank</span><strong id="lastWeekRank">—</strong><small id="lastWeekRankCohort">not ranked</small></article>
+            <article class="metric-card"><span>Active workflow</span><strong id="activeAssignmentCount">0</strong><small>assignments</small></article>
+          </div>
+        </section>
+
+        <section class="weekly-grid" aria-label="Weekly goals">
+          <article class="week-panel week-current">
+            <div class="panel-heading"><div><p class="card-kicker">Focus</p><h2>This week</h2></div><time id="thisWeekDate"></time></div>
+            <p id="thisWeekSummary" class="week-summary"></p>
+            <div id="thisWeekGoals" class="goal-list"></div>
+            <div id="thisWeekEmpty" class="empty-state" hidden>Susan hasn’t set this week’s goals yet.</div>
+          </article>
+          <article class="week-panel">
+            <div class="panel-heading"><div><p class="card-kicker">Review</p><h2>Last week</h2></div><time id="lastWeekDate"></time></div>
+            <p id="lastWeekSummary" class="week-summary"></p>
+            <div id="lastWeekGoals" class="goal-list"></div>
+            <div id="lastWeekEmpty" class="empty-state" hidden>Last week’s results haven’t been recorded yet.</div>
+            <div class="reflection-grid">
+              <div><h3>Wins</h3><ul id="lastWeekWins"></ul></div>
+              <div><h3>Next improvements</h3><ul id="lastWeekImprovements"></ul></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="workflow-grid" aria-label="Contributor workflow">
+          <article class="workflow-panel">
+            <div class="panel-heading"><div><p class="card-kicker">Live from the graph</p><h2>Submission tracking</h2></div><small class="tracking-refresh-note">Refreshes automatically</small></div>
+            <div id="lifecycleList" class="lifecycle-list" aria-live="polite"></div>
+            <div id="lifecycleEmpty" class="empty-state" hidden>No assignments are attached to this contributor yet.</div>
+          </article>
+          <aside class="manager-note">
+            <p class="card-kicker">Note from Susan</p>
+            <blockquote id="managerNote">No manager note has been added.</blockquote>
+            <p id="scorecardUpdatedAt" class="updated-at"></p>
+          </aside>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div id="publicConsole" class="public-console">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="7 Hermetic Labs home">
+        <img class="brand-logo" src="../assets/ip-library/hermetic-labs-icon.png" alt="">
+        <span><strong>7 HERMETIC LABS</strong><small>Communications Studio</small></span>
+      </a>
+      <div class="boundary-pill"><span aria-hidden="true"></span>Public-safe view</div>
+    </header>
+
+    <main id="mainContent">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">Social media management · Outreach coordination</p>
+          <h1 id="heroTitle">Turn product truth into<br><em>clear public signal.</em></h1>
+          <p class="hero-lede">The communications studio keeps each project in its own lane, moves evidence through explicit gates, and exposes only material that has crossed the public boundary.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#projects">Explore project lanes</a>
+            <a class="text-action" href="#framework">Follow the truth pipeline <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+        <aside class="boundary-card" aria-label="Release boundary">
+          <div class="identity-lockup">
+            <img src="../assets/ip-library/hermetic-labs-icon.png" alt="7 Hermetic Labs mark">
+            <div><span>7 Hermetic Labs</span><strong>Verified truth. Clear public signal.</strong><div class="identity-actions"><button type="button" data-copy-icon="../assets/ip-library/hermetic-labs-icon.png" data-copy-label="7 Hermetic Labs">Copy site mark</button></div></div>
+          </div>
+          <p class="card-label">Release boundary</p>
+          <div class="boundary-track">
+            <div><span>01</span><strong>Private work</strong><small>Evidence · drafts · review</small></div>
+            <div><span>02</span><strong>Approved signal</strong><small>Named wording · audience · channel</small></div>
+            <div><span>03</span><strong>Recorded response</strong><small>Publication · outreach · learning</small></div>
+          </div>
+          <p class="boundary-note">Nothing becomes public because it exists. It becomes public because it is proven and approved.</p>
+        </aside>
+      </section>
+
+      <section class="status-rail" aria-label="Operating principles">
+        <div><span>Source discipline</span><strong>One canonical record</strong></div>
+        <div><span>Visibility</span><strong>Private by default</strong></div>
+        <div><span>Authority</span><strong>Explicit at every gate</strong></div>
+        <div><span>Graph</span><strong id="graphRailStatus">Checking live read…</strong></div>
+      </section>
+
+      <section id="projects" class="projects-section" aria-labelledby="projectsTitle">
+        <div class="section-heading">
+          <div><p class="eyebrow">Portfolio map</p><h2 id="projectsTitle">Eight projects. Eight distinct voices.</h2></div>
+          <p>Shared discipline, separate truth. Content, evidence, audiences, approvals, targets, and measurements stay inside the project that owns them.</p>
+        </div>
+
+        <div class="project-tabs" role="tablist" aria-label="7 Hermetic Labs projects">
+          <button id="tab-halt" class="project-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="projectPanel" data-project="halt"><span>01</span>HALT</button>
+          <button id="tab-vulpine" class="project-tab" type="button" role="tab" aria-selected="false" aria-controls="projectPanel" data-project="vulpine" tabindex="-1"><span>02</span>Courier Services</button>
+          <button id="tab-vrf" class="project-tab" type="button" role="tab" aria-selected="false" aria-controls="projectPanel" data-project="vrf" tabindex="-1"><span>03</span>VRF</button>
+          <button id="tab-fefe" class="project-tab" type="button" role="tab" aria-selected="false" aria-controls="projectPanel" data-project="fefe" tabindex="-1"><span>04</span>FEFE Connect</button>
+          <button id="tab-eve" class="project-tab" type="button" role="tab" aria-selected="false" aria-controls="projectPanel" data-project="eve" tabindex="-1"><span>05</span>Eve OS / Exchange</button>
+          <button id="tab-abbe" class="project-tab" type="button" role="tab" aria-selected="false" aria-controls="projectPanel" data-project="abbe" tabindex="-1"><span>06</span>Abbé Faria</button>
+          <button id="tab-dcd" class="project-tab" type="button" role="tab" aria-selected="false" aria-controls="projectPanel" data-project="dcd" tabindex="-1"><span>07</span>Data Center Direct</button>
+          <button id="tab-rd" class="project-tab" type="button" role="tab" aria-selected="false" aria-controls="projectPanel" data-project="rd" tabindex="-1"><span>08</span>Hermetic Labs R&D</button>
+        </div>
+
+        <article id="projectPanel" class="project-panel" role="tabpanel" aria-labelledby="tab-halt" tabindex="0">
+          <div class="project-index" id="projectIndex">01</div>
+          <div class="project-main">
+            <p class="project-state" id="projectState">Family workspace</p>
+            <h3 id="projectName">HALT</h3>
+            <p id="projectDescription">Organization, Caregiver, and Community share a product family while retaining distinct audiences, evidence, wording, and approval context.</p>
+            <div id="projectProducts" class="product-list" aria-label="Products"></div>
+            <button id="openProjectStudio" class="project-enter" type="button">Enter HALT contribution workspace →</button>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Primary job</dt><dd id="projectJob">Translate verified product truth into useful public communication.</dd></div>
+            <div><dt>Public state</dt><dd id="projectPublicState">Only sanitized, named campaign records appear here.</dd></div>
+            <div><dt>Next gate</dt><dd id="projectNextGate">Bind claims to the relevant product and build.</dd></div>
+          </dl>
+        </article>
+
+        <section id="haltStudio" class="halt-studio" aria-labelledby="haltStudioTitle" hidden>
+          <header class="studio-header">
+            <button id="closeHaltStudio" class="studio-back" type="button">← All projects</button>
+            <div class="studio-identity">
+              <img id="studioProjectMark" src="../assets/halt-mark.png" alt="HALT mark">
+              <div>
+                <p id="studioProjectEyebrow" class="eyebrow">HALT contribution studio</p>
+                <h2 id="haltStudioTitle" tabindex="-1">Know the product.<br>Build from truth.</h2>
+                <p id="studioProjectDescription">HALT is an offline-capable medical coordination system in closed beta. Contributions must stay grounded in the product lane, current evidence, and qualified human review.</p>
+                <a id="studioProjectReference" href="https://7hermeticlabs.health/" target="_blank" rel="noopener">Open the full product reference <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </header>
+
+          <section id="haltBuilds" class="halt-builds" aria-labelledby="haltBuildsTitle">
+            <div class="halt-builds-heading">
+              <div>
+                <p class="eyebrow">Windows test packages</p>
+                <h3 id="haltBuildsTitle">Install the right HALT build.</h3>
+              </div>
+              <p>Choose the product you are testing, then open Playtesting to see the active report and verification history.</p>
+            </div>
+            <div class="build-policy" aria-label="Current playtesting coverage">
+              <div><span>Active ecosystem sprint</span><strong>Organization · Caregiver · Community</strong></div>
+              <div><span>Current response cycle</span><strong>Caregiver · PT-002</strong></div>
+            </div>
+            <div class="halt-build-grid">
+              <article class="halt-build-card is-primary">
+                <span class="build-badge">Ecosystem testing</span>
+                <span class="build-ready-stamp"><b>Ready</b><time datetime="2026-09-08T09:48:54-04:00">Uploaded Sep 8, 2026 · 9:48 AM ET</time></span>
+                <h4>HALT Organization</h4>
+                <p>Use this signed 1.2.22 ecosystem build for the first Organization playtest cycle.</p>
+                <div class="halt-build-actions">
+                  <a class="build-download-primary" href="https://pub-b841d8ac01084f8f822078f923a49a87.r2.dev/builds/HALT_1.2.22_setup.exe">Download 1.2.22</a>
+                  <a class="build-playtest-link" href="#haltPlaytesting">Playtesting</a>
+                </div>
+              </article>
+              <article class="halt-build-card">
+                <span class="build-badge is-versioned">Active playtesting</span>
+                <span class="build-ready-stamp"><b>Ready</b><time datetime="2026-09-08T09:48:14-04:00">Uploaded Sep 8, 2026 · 9:48 AM ET</time></span>
+                <h4>HALT Caregiver</h4>
+                <p>Use this signed 1.2.22 response build to verify PT-002 and continue Caregiver testing.</p>
+                <div class="halt-build-actions">
+                  <a class="build-download-primary" href="https://pub-b841d8ac01084f8f822078f923a49a87.r2.dev/builds/HALT_Caregiver_1.2.22_setup.exe">Download 1.2.22</a>
+                  <a class="build-playtest-link" href="#haltPlaytesting">Playtesting</a>
+                </div>
+              </article>
+              <article class="halt-build-card">
+                <span class="build-badge is-versioned">Ecosystem testing</span>
+                <span class="build-ready-stamp"><b>Ready</b><time datetime="2026-09-08T09:48:34-04:00">Uploaded Sep 8, 2026 · 9:48 AM ET</time></span>
+                <h4>HALT Community</h4>
+                <p>Use this signed 1.2.22 ecosystem build for the first Community playtest cycle.</p>
+                <div class="halt-build-actions">
+                  <a class="build-download-primary" href="https://pub-b841d8ac01084f8f822078f923a49a87.r2.dev/builds/HALT_Community_1.2.22_setup.exe">Download 1.2.22</a>
+                  <a class="build-playtest-link" href="#haltPlaytesting">Playtesting</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="haltPlaytesting" class="halt-playtesting" aria-labelledby="playtestingTitle">
+            <div class="playtesting-heading">
+              <div>
+                <p class="eyebrow">Closed-beta learning loop</p>
+                <h3 id="playtestingTitle">Playtesting, at a glance.</h3>
+                <p>Human observations become named findings, build responses, and explicit verification gates. A finding closes only after the original behavior is retested.</p>
+              </div>
+              <div class="playtesting-freshness"><span>Latest field response</span><strong>Caregiver · PT-002</strong><small>Response build 1.2.22 ready · Sep 8, 2026</small></div>
+            </div>
+
+            <figure class="playtest-overview" aria-labelledby="playtestOverviewCaption">
+              <figcaption id="playtestOverviewCaption">Cumulative closed-loop progress</figcaption>
+              <ol class="playtest-loop" aria-label="23 findings found and extracted, 21 addressed in source or a response build, 1 independently verified">
+                <li class="is-complete"><span>01</span><strong>23</strong><small>Found</small></li>
+                <li class="is-complete"><span>02</span><strong>23</strong><small>Extracted</small></li>
+                <li class="is-complete"><span>03</span><strong>21</strong><small>Addressed</small></li>
+                <li><span>04</span><strong>1</strong><small>Verified</small></li>
+              </ol>
+              <div class="severity-visual" aria-label="Latest report severity mix: 1 critical, 5 high, 3 medium, 3 low">
+                <div class="severity-track" aria-hidden="true">
+                  <span class="is-critical" style="--share:1"></span>
+                  <span class="is-high" style="--share:5"></span>
+                  <span class="is-medium" style="--share:3"></span>
+                  <span class="is-low" style="--share:3"></span>
+                </div>
+                <div class="severity-legend">
+                  <span><i class="is-critical"></i><strong>1</strong> Critical</span>
+                  <span><i class="is-high"></i><strong>5</strong> High</span>
+                  <span><i class="is-medium"></i><strong>3</strong> Medium</span>
+                  <span><i class="is-low"></i><strong>3</strong> Low</span>
+                </div>
+              </div>
+            </figure>
+
+            <details class="playtest-history" open>
+              <summary>
+                <span><strong>Open playtest history</strong><small>Two cycles · twenty-three linked findings · one verified close</small></span>
+                <span class="playtest-history-count">02</span>
+              </summary>
+              <div class="playtest-history-body">
+                <details id="pt002Cycle" class="playtest-cycle" open>
+                  <summary>
+                    <span><b>PT-002</b><strong>Caregiver 1.2.19 · extended field pass</strong><small>Nadeem · 12 new findings · response build ready</small></span>
+                  </summary>
+                  <div class="playtest-cycle-body">
+                    <div class="playtest-cycle-meta">
+                      <div><span>Decision</span><strong>1.2.22 ready for field verification</strong></div>
+                      <div><span>Source status</span><strong>9 wired · 2 clarified · 1 retest</strong></div>
+                      <div><span>Build status</span><strong>Signed · immutable · field verification required</strong></div>
+                    </div>
+                    <div class="playtest-report-grid">
+                      <details class="playtest-report" open>
+                        <summary><span><b>1</b><strong>Extracted bug report</strong><small>Sanitized field observations</small></span></summary>
+                        <div class="playtest-report-list">
+                          <section class="playtest-contribution-summary" aria-labelledby="pt002ContributionTitle">
+                            <div class="playtest-contribution-copy">
+                              <span>Contributor impact</span>
+                              <strong id="pt002ContributionTitle">Nadeem expanded the test surface.</strong>
+                              <p>This pass covered profile media, QR pairing, task ownership, mesh counts, supply state, dashboard navigation, demand planning, and offline AI. It added twelve findings and independently closed one earlier question.</p>
+                            </div>
+                            <dl class="playtest-contribution-stats">
+                              <div><dt>New findings</dt><dd>12</dd></div>
+                              <div><dt>Earlier closes</dt><dd>1</dd></div>
+                              <div><dt>Workflow areas</dt><dd>8</dd></div>
+                            </dl>
+                          </section>
+                          <article><span class="finding-code">F-012</span><span class="finding-severity is-medium">Medium</span><div><strong>Care-record profile image does not appear</strong><p>An added profile image is missing from the care record. Retest must distinguish save failure from render failure after reload.</p></div></article>
+                          <article><span class="finding-code">F-013</span><span class="finding-severity is-medium">Medium</span><div><strong>Admission warning conflicts with a working paired session</strong><p>The bedside screen briefly reported that it was not admitted while its assistance request still reached the caregiver workspace.</p></div></article>
+                          <article><span class="finding-code">F-014</span><span class="finding-severity is-high">High</span><div><strong>An open assistance request cannot be claimed</strong><p>The Claim control appeared unavailable on an active request, blocking the caregiver from assigning and resolving it.</p></div></article>
+                          <article><span class="finding-code">F-015</span><span class="finding-severity is-medium">Medium</span><div><strong>Critical counter exceeds the visible care context</strong><p>The mesh summary reported two critical items with one synthetic patient and no explanation of what contributed to the count.</p></div></article>
+                          <article><span class="finding-code">F-016</span><span class="finding-severity is-low">Low</span><div><strong>A depleted-supply warning appears twice</strong><p>The same first-aid supply shortage rendered as two identical alert cards.</p></div></article>
+                          <article><span class="finding-code">F-017</span><span class="finding-severity is-high">High</span><div><strong>Supply warning remains after restock</strong><p>The depleted warning did not clear after stock rose above its alert threshold.</p></div></article>
+                          <article><span class="finding-code">F-018</span><span class="finding-severity is-critical">Critical</span><div><strong>An unclaimed assistance request can be silently dismissed</strong><p>An open request closed immediately without being claimed, confirmed, or given a resolution record. A genuine care need could disappear before anyone acts on it.</p></div></article>
+                          <article><span class="finding-code">F-019</span><span class="finding-severity is-low">Low</span><div><strong>Care Home summary cards do not navigate</strong><p>The four summary cards do not open or filter their related work areas.</p></div></article>
+                          <article><span class="finding-code">F-020</span><span class="finding-severity is-low">Low</span><div><strong>Mesh summary counters have no drill-down</strong><p>Ward, patient, and critical counters do not reveal the records behind their totals.</p></div></article>
+                          <article><span class="finding-code">F-021</span><span class="finding-severity is-high">High</span><div><strong>Critical counter stays stale after resolution</strong><p>The count remained elevated after the related item was resolved, indicating that the summary does not react to underlying state changes.</p></div></article>
+                          <article><span class="finding-code">F-022</span><span class="finding-severity is-high">High</span><div><strong>A water request is absent from the Need calculation</strong><p>The planning chart continued to show zero water need after a bedside request. Triage must confirm whether Need represents planned demand, live requests, or both.</p></div></article>
+                          <article><span class="finding-code">F-023</span><span class="finding-severity is-high">High</span><div><strong>A follow-up offline AI response does not complete</strong><p>The first response completed, but the next short message remained in generation for more than three minutes.</p></div></article>
+                        </div>
+                      </details>
+
+                      <details class="playtest-report">
+                        <summary><span><b>2</b><strong>Build response</strong><small>What changed and what must be retested</small></span></summary>
+                        <div class="playtest-report-list is-response">
+                          <section class="playtest-response-release" aria-label="PT-002 response status">
+                            <div><span>Response build</span><strong>HALT Caregiver 1.2.22</strong><small>Signed and published after the full Rust suite, production build, embedded-signature, and public-download gates passed. Organization and Community 1.2.22 are also ready for the ecosystem sprint.</small></div>
+                            <a href="https://pub-b841d8ac01084f8f822078f923a49a87.r2.dev/builds/HALT_Caregiver_1.2.22_setup.exe">Download response build</a>
+                          </section>
+                          <article><span class="finding-code">F-012</span><span class="finding-status is-fixed">Wired</span><div><strong>Protected care-record media now loads through the authorized path</strong><p>Desktop views read attachment bytes through the native command; browser views use the admitted field session. Profile photos and attachment previews no longer depend on an unauthenticated image URL.</p></div></article>
+                          <article><span class="finding-code">F-013</span><span class="finding-status is-fixed">Wired</span><div><strong>Recovered bedside sessions clear stale admission warnings</strong><p>A successful identity refresh or mesh connection now removes the earlier transient error instead of leaving a red warning beside a working request.</p></div></article>
+                          <article><span class="finding-code">F-014</span><span class="finding-status is-fixed">Wired</span><div><strong>Claim now carries the signed caregiver identity</strong><p>The Claim action supplies both the member ID and display name required by the shared task core, updates the board immediately, and shows a useful error when network identity is missing.</p></div></article>
+                          <article><span class="finding-code">F-015</span><span class="finding-status is-gap">Clarified</span><div><strong>The counter represents supply risk, not critical patients</strong><p>The ambiguous “Critical” label is now “Supply risks.” Duplicate stock records are rolled into one alert position so the total communicates what it actually measures.</p></div></article>
+                          <article><span class="finding-code">F-016</span><span class="finding-status is-fixed">Wired</span><div><strong>Equivalent stock records produce one shortage alert</strong><p>Alert calculations group the same named item by location and purpose, while new duplicate entries redirect the user to the existing stock card.</p></div></article>
+                          <article><span class="finding-code">F-017</span><span class="finding-status is-fixed">Wired</span><div><strong>Restock changes refresh the alert surfaces immediately</strong><p>Add, consume, restock, and delete operations now notify the dashboard and planning chart; the rolled-up alert clears when combined stock rises above its threshold.</p></div></article>
+                          <article><span class="finding-code">F-018</span><span class="finding-status is-fixed">Protected</span><div><strong>Active assistance requests cannot be silently removed</strong><p>The UI exposes removal only after completion or cancellation, asks for confirmation, and the shared Rust core independently rejects deletion of an active assistance request.</p></div></article>
+                          <article><span class="finding-code">F-019</span><span class="finding-status is-fixed">Wired</span><div><strong>Care Home summary cards now open their work</strong><p>People and stock cards navigate to their records; assistance and task cards expand the task board with the relevant view.</p></div></article>
+                          <article><span class="finding-code">F-020</span><span class="finding-status is-fixed">Wired</span><div><strong>Mesh counters now drill into care or supplies</strong><p>Ward and patient totals open the care timeline. Supply-risk totals open Supplies, with labels that match the destination.</p></div></article>
+                          <article><span class="finding-code">F-021</span><span class="finding-status is-gap">Clarified</span><div><strong>Supply risk no longer masquerades as unresolved care</strong><p>Resolving a patient request does not change an unrelated stock warning. Stock mutations now refresh the correctly named supply-risk count without waiting for polling.</p></div></article>
+                          <article><span class="finding-code">F-022</span><span class="finding-status is-fixed">Wired</span><div><strong>Open supply requests contribute to live Need</strong><p>The planning chart now combines care-plan demand with unresolved assistance requests, including water and hydration matches.</p></div></article>
+                          <article><span class="finding-code">F-023</span><span class="finding-status is-review">Retest</span><div><strong>Offline inference can no longer spin without a boundary</strong><p>Quick responses stop after 90 seconds and deep analysis after 180 seconds, cancel the local stream, and return a retryable message. The original second-turn stall still requires verification on the packaged runtime.</p></div></article>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                </details>
+
+                <details id="pt001Cycle" class="playtest-cycle">
+                  <summary>
+                    <span><b>PT-001</b><strong>Caregiver 1.2.19 · build v8a</strong><small>Warren / Nadeem · 11 findings · F-005 verified</small></span>
+                  </summary>
+                  <div class="playtest-cycle-body">
+                    <div class="playtest-cycle-meta">
+                      <div><span>Decision</span><strong>1.2.21 ready for remaining verification</strong></div>
+                      <div><span>Source status</span><strong>11 triaged · F-005 verified</strong></div>
+                      <div><span>Build status</span><strong>10 fixed · verification pending</strong></div>
+                    </div>
+                    <div class="playtest-report-grid">
+                      <details class="playtest-report" open>
+                        <summary><span><b>1</b><strong>Extracted bug report</strong><small>What the tester found</small></span></summary>
+                        <div class="playtest-report-list">
+                          <section class="playtest-report-evidence" aria-labelledby="pt001EvidenceTitle">
+                            <div class="playtest-gallery-intro">
+                              <div><span>Contribution evidence</span><strong id="pt001EvidenceTitle">The work behind PT-001.</strong></div>
+                              <p>Each capture connects this tester’s fieldwork to the findings below.</p>
+                            </div>
+                            <div class="playtest-gallery" aria-label="PT-001 playtesting contribution gallery">
+                              <a class="playtest-gallery-card" href="../assets/playtest-caregiver-field-run-v8a.jpg" target="_blank" rel="noopener">
+                                <figure>
+                                  <div class="playtest-gallery-image"><img src="../assets/playtest-caregiver-field-run-v8a.jpg" alt="HALT Caregiver intake form being stress-tested with synthetic inputs" loading="lazy"></div>
+                                  <figcaption><span>01 · Field run</span><strong>The intake flow was pushed past ordinary use.</strong><small>Synthetic test inputs · Open full image ↗</small></figcaption>
+                                </figure>
+                              </a>
+                              <a class="playtest-gallery-card" href="../assets/playtest-whisper-failure-v8a.jpg" target="_blank" rel="noopener">
+                                <figure>
+                                  <div class="playtest-gallery-image"><img src="../assets/playtest-whisper-failure-v8a.jpg" alt="Captured HALT Whisper startup failure after two attempts" loading="lazy"></div>
+                                  <figcaption><span>02 · Failure captured</span><strong>A startup failure became a reproducible finding.</strong><small>Observed behavior · Open full image ↗</small></figcaption>
+                                </figure>
+                              </a>
+                              <a class="playtest-gallery-card" href="../assets/playtest-summary-v8a.png" target="_blank" rel="noopener">
+                                <figure>
+                                  <div class="playtest-gallery-image"><img src="../assets/playtest-summary-v8a.png" alt="Playtest dashboard summarizing eleven findings by severity and status" loading="lazy"></div>
+                                  <figcaption><span>03 · Cycle result</span><strong>Eleven observations became an actionable build plan.</strong><small>Organized evidence · Open full image ↗</small></figcaption>
+                                </figure>
+                              </a>
+                            </div>
+                          </section>
+                          <article><span class="finding-code">F-001</span><span class="finding-severity is-medium">Medium</span><div><strong>Name accepts arbitrary symbols</strong><p>Identity input saves malformed text without format or length controls.</p></div></article>
+                          <article><span class="finding-code">F-002</span><span class="finding-severity is-medium">Medium</span><div><strong>Primary-contact input is unclear and unvalidated</strong><p>The field accepts malformed text and does not explain whether it expects a name, phone number, or both.</p></div></article>
+                          <article><span class="finding-code">F-003</span><span class="finding-severity is-high">High</span><div><strong>Impossible age is accepted</strong><p>Age 999 saves without warning or a realistic range check.</p></div></article>
+                          <article><span class="finding-code">F-004</span><span class="finding-severity is-high">High</span><div><strong>Stored-script safety needs complete retesting</strong><p>A synthetic script payload still needs verification across every display and export surface.</p></div></article>
+                          <article><span class="finding-code">F-005</span><span class="finding-severity is-medium">Medium</span><div><strong>Dashboard tiles may remain at zero</strong><p>A controlled add-person retest is needed to distinguish refresh behavior from incorrect counting.</p></div></article>
+                          <article><span class="finding-code">F-006</span><span class="finding-severity is-critical">Critical</span><div><strong>Age displays as a corrupted overflow value</strong><p>The patient view showed 3268586758386868600000 years after extreme input.</p></div></article>
+                          <article><span class="finding-code">F-007</span><span class="finding-severity is-high">High</span><div><strong>Unset weight displays as 0 kg</strong><p>Missing information is presented as an entered clinical value.</p></div></article>
+                          <article><span class="finding-code">F-008</span><span class="finding-severity is-low">Low</span><div><strong>Injury time displays as raw ISO text</strong><p>The timestamp is inconsistent with the nearby formatted admission time.</p></div></article>
+                          <article><span class="finding-code">F-009</span><span class="finding-severity is-critical">Critical</span><div><strong>All four vital fields accept impossible values</strong><p>Heart rate, systolic BP, SpO2, and temperature save values far outside valid ranges.</p></div></article>
+                          <article><span class="finding-code">F-010</span><span class="finding-severity is-medium">Medium</span><div><strong>Family Lookup defaults to visible</strong><p>A new record becomes visible to family search without an explicit tester choice.</p></div></article>
+                          <article><span class="finding-code">F-011</span><span class="finding-severity is-medium">Medium</span><div><strong>Free-text fields accept unbounded garbage strings</strong><p>The data-quality and safe-output pattern extends across condition, dietary, and general notes.</p></div></article>
+                        </div>
+                      </details>
+
+                      <details class="playtest-report">
+                        <summary><span><b>2</b><strong>Build response</strong><small>What changes and what must pass</small></span></summary>
+                        <div class="playtest-report-list is-response">
+                          <section class="playtest-response-release" aria-label="PT-001 response release">
+                            <div><span>Response build</span><strong>HALT Caregiver 1.2.21</strong><small>Signed · immutable · ready for Warren / Nadeem to verify</small></div>
+                            <a href="https://pub-b841d8ac01084f8f822078f923a49a87.r2.dev/builds/HALT_Caregiver_1.2.21_setup.exe">Download response build</a>
+                          </section>
+                          <article><span class="finding-code">F-001</span><span class="finding-status is-fixed">Fixed</span><div><strong>Safe, realistic identity input</strong><p>Names are required, capped at 200 characters, and reject control characters. Unicode, apostrophes, and hyphens remain valid by design; output encoding handles unsafe markup.</p></div></article>
+                          <article><span class="finding-code">F-002</span><span class="finding-status is-fixed">Fixed</span><div><strong>Contact purpose is explicit</strong><p>The field now says “name or phone,” includes an example, and applies a 500-character/control-character boundary while remaining optional.</p></div></article>
+                          <article><span class="finding-code">F-003</span><span class="finding-status is-fixed">Fixed</span><div><strong>Impossible ages stop before save</strong><p>Caregiver accepts whole-year ages from 0–130 only, with the same range enforced again by the shared core.</p></div></article>
+                          <article><span class="finding-code">F-004</span><span class="finding-status is-fixed">Fixed</span><div><strong>The real stored-script sinks are closed</strong><p>React already rendered normal screens as text. The patient and shift-handoff HTML exports were the exposed paths; patient-controlled values are now encoded and covered by a script-payload regression test.</p></div></article>
+                          <article><span class="finding-code">F-005</span><span class="finding-status is-verified">Verified</span><div><strong>Dashboard counting works as designed</strong><p>The follow-up field pass confirmed that all four summary values updated after adding a synthetic care record and submitting an assistance request.</p></div></article>
+                          <article><span class="finding-code">F-006</span><span class="finding-status is-fixed">Fixed</span><div><strong>Unbounded age pass-through is blocked</strong><p>This was not an integer overflow: the extreme number was stored and displayed as entered. UI and core boundaries now reject it.</p></div></article>
+                          <article><span class="finding-code">F-007</span><span class="finding-status is-fixed">Fixed</span><div><strong>Missing weight reads as missing</strong><p>An unset weight now displays as an em dash instead of “0 kg,” and the editor accepts only blank or 0.1–1000 kg.</p></div></article>
+                          <article><span class="finding-code">F-008</span><span class="finding-status is-fixed">Fixed</span><div><strong>Injury time matches admission time</strong><p>Both timestamps now use the same guarded local date-and-time formatter; invalid legacy text remains visible instead of crashing the panel.</p></div></article>
+                          <article><span class="finding-code">F-009</span><span class="finding-status is-fixed">Fixed</span><div><strong>Vitals have field-specific safety boundaries</strong><p>Caregiver and the shared save boundary reject impossible heart rate, systolic BP, SpO₂, and temperature values. Missing observations no longer become fake normal graph points.</p></div></article>
+                          <article><span class="finding-code">F-010</span><span class="finding-status is-fixed">Fixed</span><div><strong>Family Lookup is explicit opt-in</strong><p>New Caregiver records now start hidden. Visibility changes only when the checkbox is deliberately enabled.</p></div></article>
+                          <article><span class="finding-code">F-011</span><span class="finding-status is-fixed">Fixed</span><div><strong>Free text is bounded without breaking languages</strong><p>Concern, dietary notes, general notes, allergies, and contact text now have appropriate size/control-character limits; exports encode the saved content.</p></div></article>
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                </details>
+                <p class="playtest-public-note"><strong>Public-safe summary.</strong> Raw test inputs, synthetic record names, screenshots, network details, and internal evidence remain in the controlled handoff record.</p>
+              </div>
+            </details>
+          </section>
+
+          <section class="project-pulse project-pulse-top" aria-labelledby="pulseTitle">
+            <div class="project-pulse-heading">
+              <div><p class="eyebrow">Live public projection</p><h3 id="pulseTitle">HALT campaign pulse</h3><p id="pulseScope">Product education and contribution activity for the HALT family.</p></div>
+              <div class="pulse-actions"><span id="boardFreshness">Connecting to the public graph…</span><button id="refreshBoard" type="button">Refresh</button></div>
+            </div>
+            <div class="campaign-scope-grid" aria-label="Campaign scope">
+              <div><span>Project scope</span><strong id="campaignScope">HALT Organization, Caregiver, and Community</strong></div>
+              <div><span>Association rule</span><strong id="campaignAssociation">Explicit HALT project key required</strong></div>
+            </div>
+            <div id="boardNotice" class="board-notice">Only campaigns explicitly assigned to HALT appear in this lane.</div>
+            <div id="campaignBoard" class="campaign-board" aria-live="polite" aria-busy="true">
+              <div class="board-loading"><span aria-hidden="true"></span>Loading sanitized HALT campaign state…</div>
+            </div>
+          </section>
+
+          <ol id="studioSteps" class="studio-steps" aria-label="HALT contribution lifecycle">
+            <li class="is-current" data-step-indicator="1"><span>01</span><strong>Scope</strong></li>
+            <li data-step-indicator="2"><span>02</span><strong>Ground</strong></li>
+            <li data-step-indicator="3"><span>03</span><strong>Build</strong></li>
+            <li data-step-indicator="4"><span>04</span><strong>Review</strong></li>
+            <li data-step-indicator="5"><span>05</span><strong>Submit</strong></li>
+          </ol>
+
+          <form id="haltContributionForm" class="halt-contribution-form" novalidate>
+            <div class="studio-local-note"><span aria-hidden="true"></span><strong>Local draft</strong> Nothing leaves this browser until you explicitly open and send the prepared email.</div>
+            <div id="studioValidation" class="studio-validation" role="alert" hidden></div>
+
+            <section class="studio-stage" data-studio-step="1" aria-labelledby="scopeTitle">
+              <div class="studio-prompt"><p class="eyebrow">Step 01 · Scope</p><h3 id="scopeTitle">Which HALT experience are you speaking for?</h3><p id="scopeDescription">Start with an active Susan assignment, then choose the product and contribution type. Each lane serves a different person and setting.</p></div>
+              <div class="studio-field-grid studio-field-grid-top">
+                <label class="studio-field"><span>Assignment code <b>*</b></span><input id="haltAssignmentCode" name="assignmentCode" type="text" inputmode="text" autocomplete="off" placeholder="SOCIAL-003" maxlength="20" aria-describedby="assignmentHint" required><small id="assignmentHint">Use the code shown in your assignment or scorecard.</small></label>
+                <label class="studio-field"><span>Contribution type <b>*</b></span><select id="haltContributionType" name="contributionType" required><option value="">Choose one</option><option value="social-copy">Social copy</option><option value="visual">Visual or carousel</option><option value="short-video">Short video</option><option value="evidence-correction">Evidence or correction</option><option value="field-lead">Field lead or outreach signal</option></select><small>This controls the guidance in the build step.</small></label>
+              </div>
+              <input id="haltLane" name="lane" type="hidden" required>
+              <div id="studioLanePicker" class="lane-picker" role="radiogroup" aria-label="HALT product lane"></div>
+              <div class="studio-controls"><span>Step 1 of 5 · Saved only in this browser.</span><button type="button" data-next-step="2">Continue to grounding →</button></div>
+            </section>
+
+            <section class="studio-stage" data-studio-step="2" aria-labelledby="groundTitle" hidden>
+              <div class="studio-prompt"><p class="eyebrow">Step 02 · Ground</p><h3 id="groundTitle">What is the exact truth you want to carry forward?</h3><p>One source, one bounded claim, one audience. If the source cannot support the words, the words do not move.</p></div>
+              <div id="haltTruthCard" class="truth-card" aria-live="polite"></div>
+              <div class="studio-field-grid">
+                <label class="studio-field"><span>Primary source URL <b>*</b></span><input id="haltSourceUrl" name="sourceUrl" type="url" placeholder="https://7hermeticlabs.health/" maxlength="500" required><small>Use the current product page, approved brief, or evidence record.</small></label>
+                <label class="studio-field"><span>Audience <b>*</b></span><select id="haltAudience" name="audience" required><option value="">Choose one</option></select><small>Choose the person who should understand or act.</small></label>
+                <label class="studio-field studio-field-wide"><span>Supported claim <b>*</b></span><textarea id="haltClaim" name="claim" rows="3" maxlength="360" placeholder="State one claim the source directly supports." required></textarea><small><span id="claimCount">0</span>/360 characters</small></label>
+                <label class="studio-field studio-field-wide"><span>Why this matters now</span><textarea id="haltContext" name="context" rows="3" maxlength="600" placeholder="Add the human or operational context without expanding the claim."></textarea><small><span id="contextCount">0</span>/600 characters</small></label>
+              </div>
+              <div class="studio-controls"><button class="studio-secondary" type="button" data-prev-step="1">← Scope</button><button type="button" data-next-step="3">Continue to build →</button></div>
+            </section>
+
+            <section class="studio-stage" data-studio-step="3" aria-labelledby="buildTitle" hidden>
+              <div class="studio-prompt"><p class="eyebrow">Step 03 · Build</p><h3 id="buildTitle">Make the contribution usable.</h3><p>Provide the draft and enough context for Susan to review it without reconstructing your thinking. Attach files later in the assignment email.</p></div>
+              <div class="post-examples" aria-labelledby="postExamplesTitle">
+                <div class="post-examples-heading">
+                  <div><p class="eyebrow">Post pattern check</p><h4 id="postExamplesTitle">Carry the gravity. Keep the claim bounded.</h4></div>
+                  <p>These are writing patterns, not standing approval. Match every final sentence to the current source.</p>
+                </div>
+                <div class="post-example-grid">
+                  <article class="post-example is-positive">
+                    <div class="post-example-label"><span aria-hidden="true">✓</span><strong>Use this pattern</strong></div>
+                    <p id="positiveExampleText">HALT is a working closed-beta, offline-capable medical coordination system designed for structured evaluation in constrained environments. Core workflows are designed to run locally, with qualified human review kept in the loop.</p>
+                    <small id="positiveExampleWhy">Why it works · Names the current status, bounds the capability, and keeps human review visible.</small>
+                    <button type="button" data-copy-text-target="positiveExampleText">Copy positive example</button>
+                  </article>
+                  <article class="post-example is-negative">
+                    <div class="post-example-label"><span aria-hidden="true">×</span><strong>Do not use</strong></div>
+                    <p id="negativeExampleText">HALT uses autonomous medical AI to diagnose patients anywhere with 100% reliability—even without doctors or internet.</p>
+                    <small id="negativeExampleWhy">Why it fails · Invents autonomy, diagnosis, absolute performance, and removal of clinical oversight.</small>
+                    <span class="no-copy-note">Intentionally not copyable</span>
+                  </article>
+                </div>
+              </div>
+              <fieldset class="channel-picker"><legend>Target channel <b>*</b></legend><label><input type="checkbox" name="channels" value="LinkedIn"><span>LinkedIn</span></label><label><input type="checkbox" name="channels" value="Instagram"><span>Instagram</span></label><label><input type="checkbox" name="channels" value="Facebook"><span>Facebook</span></label><label><input type="checkbox" name="channels" value="X"><span>X</span></label><label><input type="checkbox" name="channels" value="YouTube"><span>YouTube</span></label></fieldset>
+              <div class="studio-field-grid">
+                <label class="studio-field studio-field-wide"><span>Draft contribution <b>*</b></span><textarea id="haltDraftCopy" name="draftCopy" rows="8" maxlength="2400" placeholder="Paste the proposed copy, script, correction, or outreach note." required></textarea><small><span id="draftCount">0</span>/2400 characters</small></label>
+                <label class="studio-field"><span>Asset or working-file links</span><textarea id="haltAssetLinks" name="assetLinks" rows="4" maxlength="1000" placeholder="One HTTPS link per line"></textarea><small>Keep private files in the approved working folder; do not paste credentials or patient data.</small></label>
+                <label class="studio-field"><span>Alt text or visual description</span><textarea id="haltAltText" name="altText" rows="4" maxlength="600" placeholder="Describe the visual content and meaningful text."></textarea><small>Required when a visual or asset link is included.</small></label>
+              </div>
+              <div class="studio-controls"><button class="studio-secondary" type="button" data-prev-step="2">← Grounding</button><button type="button" data-next-step="4">Continue to review →</button></div>
+            </section>
+
+            <section class="studio-stage" data-studio-step="4" aria-labelledby="reviewTitle" hidden>
+              <div class="studio-prompt"><p class="eyebrow">Step 04 · Review</p><h3 id="reviewTitle">Stop the avoidable mistakes here.</h3><p>This is contributor self-check, not approval. Susan still reviews the submission, and consequential claims remain with Dee.</p></div>
+              <div class="safety-grid">
+                <label><input id="checkSource" name="checkSource" type="checkbox"><span><strong>Source-bound</strong>The current source directly supports the claim and its limits.</span></label>
+                <label><input id="checkPrivacy" name="checkPrivacy" type="checkbox"><span><strong>Privacy-safe</strong>No personal, private-contact, credential, confidential, or regulated data is included.</span></label>
+                <label><input id="checkMedical" name="checkMedical" type="checkbox"><span><strong>Human authority intact</strong>The draft does not present AI output as authority or remove required qualified review.</span></label>
+                <label><input id="checkStatus" name="checkStatus" type="checkbox"><span><strong>Status is accurate</strong>The draft does not imply deployment, validation, adoption, approval, or certification that the source does not prove.</span></label>
+              </div>
+              <div id="haltReviewSummary" class="review-summary"></div>
+              <div class="studio-controls"><button class="studio-secondary" type="button" data-prev-step="3">← Build</button><button type="button" data-next-step="5">Prepare submission →</button></div>
+            </section>
+
+            <section class="studio-stage" data-studio-step="5" aria-labelledby="submitTitle" hidden>
+              <div class="studio-prompt"><p class="eyebrow">Step 05 · Submit</p><h3 id="submitTitle">Hand off a complete packet.</h3><p>The buttons below prepare your existing assignment channel. Nothing is approved, published, or sent automatically.</p></div>
+              <div class="submission-layout">
+                <div class="submission-packet"><div class="submission-packet-head"><strong>Submission packet</strong><span id="packetStatus">Ready to copy</span></div><pre id="haltSubmissionPacket"></pre></div>
+                <aside class="submission-guide">
+                  <p class="eyebrow">What happens next</p>
+                  <ol><li><span>1</span><div><strong>You send</strong><p>Send from the email attached to your contributor profile and add any files.</p></div></li><li><span>2</span><div><strong>Inbound record</strong><p>When the configured workflow receives the reply, it can record the assignment and evidence as submitted.</p></div></li><li><span>3</span><div><strong>Susan reviews</strong><p>She requests changes or accepts the contribution.</p></div></li><li><span>4</span><div><strong>Governed promotion</strong><p>Accepted work can move to calendar, legal review, and approval. Contributors do not publish.</p></div></li></ol>
+                </aside>
+              </div>
+              <div class="submit-actions"><button id="copyHaltPacket" class="studio-secondary" type="button">Copy packet</button><a id="openHaltEmail" class="studio-primary-link" href="#">Open prepared email</a><button id="clearHaltDraft" class="studio-clear" type="button">Clear local draft</button></div>
+              <p class="submission-note">Your mail app will open a draft addressed to Susan. Confirm the assignment code, attach files, and send from the same address that received the assignment.</p>
+              <div class="submission-tracking-note"><span aria-hidden="true"></span><div><strong>Track the response</strong><p>Your assignment email includes a private status link. Use it to confirm receipt, read Susan’s feedback, and see the next action without searching the email thread.</p></div></div>
+              <div class="studio-controls"><button class="studio-secondary" type="button" data-prev-step="4">← Review</button><span>Local draft remains available until you clear it.</span></div>
+            </section>
+          </form>
+
+          <div class="studio-project-context">
+            <section id="projectSpotlight" class="project-spotlight" aria-labelledby="projectSpotlightTitle" hidden>
+              <header class="project-spotlight-heading">
+                <div><p id="projectSpotlightKicker" class="eyebrow">VRF public map</p><h3 id="projectSpotlightTitle">Three live packs. One larger body taking shape.</h3></div>
+                <p id="projectSpotlightSummary"></p>
+              </header>
+              <div id="projectSpotlightStats" class="project-spotlight-stats" aria-label="VRF portfolio status"></div>
+              <div id="projectSpotlightGrid" class="project-spotlight-grid"></div>
+              <div class="project-spotlight-path">
+                <span>The system path</span>
+                <strong id="projectSpotlightPath"></strong>
+              </div>
+              <footer class="project-spotlight-footer">
+                <div><span>Public home</span><strong id="projectSpotlightHomeTitle">Standalone VRF source of truth</strong><p id="projectSpotlightHomeDescription">The independent VRF site now carries the public product experience while this workspace keeps contribution context and source boundaries visible.</p></div>
+                <a id="projectSpotlightReference" href="https://virtualrealityfatality.com/">Visit the VRF site →</a>
+              </footer>
+            </section>
+            <details class="project-assets" open>
+              <summary class="project-assets-heading">
+                <div><p class="eyebrow">Icon &amp; IP library</p><h3 id="projectAssetsTitle">HALT marks</h3></div>
+                <div class="project-assets-summary-meta"><p id="projectAssetsDescription">Approved source assets, kept inside the project lane that owns them.</p><span class="project-assets-toggle"><span class="when-open">Collapse ↑</span><span class="when-closed">Expand ↓</span></span></div>
+              </summary>
+              <div class="project-asset-scroll" tabindex="0" aria-label="Scrollable project assets"><div id="projectAssetGrid" class="project-asset-grid"></div></div>
+            </details>
+          </div>
+        </section>
+      </section>
+
+      <section id="framework" class="framework-section" aria-labelledby="frameworkTitle">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Truth pipeline</p><h2 id="frameworkTitle">Evidence moves. Authority stays visible.</h2></div>
+          <p>The pipeline produces communication and captures response. It does not replace product development, testing, legal review, or direct institutional authority.</p>
+        </div>
+        <ol class="pipeline" aria-label="Evidence to response pipeline">
+          <li><span>01</span><strong>Evidence</strong><small>Current product or operating fact</small></li>
+          <li><span>02</span><strong>Verified claim</strong><small>Supported wording and limits</small></li>
+          <li><span>03</span><strong>Audience frame</strong><small>Project voice and channel</small></li>
+          <li><span>04</span><strong>Approval</strong><small>Technical, domain, editorial</small></li>
+          <li><span>05</span><strong>Release</strong><small>Publish or prepare outreach</small></li>
+          <li><span>06</span><strong>Response</strong><small>Record, route, and learn</small></li>
+        </ol>
+      </section>
+
+      <section class="authority-section" aria-labelledby="authorityTitle">
+        <div class="section-heading compact">
+          <div><p class="eyebrow">Operating authority</p><h2 id="authorityTitle">Clear lanes, clean handoffs.</h2></div>
+          <p>People may hold more than one role, but each decision remains explicit and attributable.</p>
+        </div>
+        <div class="authority-grid">
+          <article><span class="role-number">01</span><p class="role-label">Contributors</p><h3>Create and prepare</h3><p>Research, generate, adapt, and upload assigned material. They do not approve claims, publish, or represent the organization without explicit delegation.</p></article>
+          <article><span class="role-number">02</span><p class="role-label">Susan · Social Media Manager</p><h3>Verify and operate</h3><p>Organizes contributors, assembles evidence, manages routine approved content, publishes, monitors, and prepares the outreach pipeline within defined gates.</p></article>
+          <article><span class="role-number">03</span><p class="role-label">Dee · Final authority</p><h3>Approve and commit</h3><p>Owns consequential claims, direct institutional outreach, exceptions, pilots, partnerships, evaluations, and commitments made for the projects.</p></article>
+        </div>
+      </section>
+
+      <section class="privacy-section" aria-label="Public and private boundary">
+        <div><p class="eyebrow">Deliberate visibility</p><h2>This page is a projection,<br>not the private workspace.</h2></div>
+        <p>Evidence files, draft claims, contact records, outreach preparation, private links, internal notes, and unapproved content stay behind the boundary. This route displays only the operating model and the Graph’s sanitized public campaign projection.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div><strong>7 HERMETIC LABS</strong><span>Communications Studio</span></div>
+      <p>Public-safe coordination view · Private work remains private by design.</p>
+      <a href="https://7hermeticlabs.info" rel="noopener">7hermeticlabs.info <span aria-hidden="true">↗</span></a>
+    </footer>
+  </div>
+</body>
+</html>

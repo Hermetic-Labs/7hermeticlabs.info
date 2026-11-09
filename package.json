@@ -1,9 +1,9 @@
 {
-  "name": "blankit-framework",
+  "name": "seven-hermetic-labs-info",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "BLANKIT migration of the Social Health public coordination site.",
+  "description": "7 Hermetic Labs public communications front door and portfolio studio.",
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "node tests/launcher.test.mjs && node tests/migration.browser.mjs",

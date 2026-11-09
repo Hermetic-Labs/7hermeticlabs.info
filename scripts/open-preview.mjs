@@ -6,7 +6,9 @@ import { get } from "node:http";
 export async function openReadyPreview(origin, openBrowser = openWindowsBrowser, fetchPreview = fetchLocalPreview) {
   const url = localPublicPreviewUrl(origin);
   for (const [pathname, type, marker] of [
-    ["/", "text/html", "BLANKIT — Social Health"],
+    ["/", "text/html", "7 Hermetic Labs — Public Communications"],
+    ["/studio/", "text/html", "7 Hermetic Labs — Communications Studio"],
+    ["/landing.css", "text/css", ".signal-card"],
     ["/site.css", "text/css", ":root"],
     ["/scorecard.css", "text/css", ".contributor-workspace"],
     ["/site.js", "text/javascript", "const projects"],
@@ -65,7 +67,7 @@ export function localPublicPreviewUrl(origin) {
     url.search ||
     url.hash
   ) {
-    throw new Error("Only the local public BLANKIT page may be opened automatically.");
+    throw new Error("Only the local 7 Hermetic Labs public page may be opened automatically.");
   }
   return url;
 }

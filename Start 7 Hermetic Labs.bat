@@ -1,14 +1,14 @@
 @echo off
 setlocal
-title BLANKIT Local Preview
+title 7 Hermetic Labs Local Preview
 
-set "BLANKIT_ROOT=%~dp0"
-cd /d "%BLANKIT_ROOT%"
+set "SEVEN_LABS_ROOT=%~dp0"
+cd /d "%SEVEN_LABS_ROOT%"
 if errorlevel 1 goto :directory_error
 
 echo.
-echo  BLANKIT - Business Language and Networking Kit
-echo  We got you covered.
+echo  7 Hermetic Labs - Public Communications
+echo  Product truth, made public with care.
 echo  ------------------------------------------------
 echo.
 
@@ -18,9 +18,9 @@ if errorlevel 1 goto :node_missing
 where npm.cmd >nul 2>nul
 if errorlevel 1 goto :npm_missing
 
-for /f "tokens=1 delims=." %%V in ('node -p "process.versions.node" 2^>nul') do set "BLANKIT_NODE_MAJOR=%%V"
-if not defined BLANKIT_NODE_MAJOR goto :node_missing
-if %BLANKIT_NODE_MAJOR% LSS 20 goto :node_old
+for /f "tokens=1 delims=." %%V in ('node -p "process.versions.node" 2^>nul') do set "SEVEN_LABS_NODE_MAJOR=%%V"
+if not defined SEVEN_LABS_NODE_MAJOR goto :node_missing
+if %SEVEN_LABS_NODE_MAJOR% LSS 20 goto :node_old
 
 if not exist "package.json" goto :project_missing
 
@@ -30,13 +30,13 @@ echo  npm:
 call npm.cmd --version
 if errorlevel 1 goto :npm_missing
 echo.
-echo  No runtime package installation is needed for the BLANKIT preview.
+echo  No runtime package installation is needed for this preview.
 echo  Starting the migrated local site. It does not publish or write externally.
 echo.
 echo  Building the local preview. The public page will open when it is ready.
 echo  The server will print the URLs using its selected port.
 echo.
-echo  Keep this window open while using BLANKIT.
+echo  Keep this window open while using the communications site.
 echo  Press Ctrl+C to stop the preview.
 echo.
 
@@ -44,20 +44,20 @@ call npm.cmd run build
 if errorlevel 1 goto :build_error
 
 call npm.cmd run serve -- --open
-set "BLANKIT_EXIT_CODE=%ERRORLEVEL%"
-if "%BLANKIT_EXIT_CODE%"=="0" goto :finished
+set "SEVEN_LABS_EXIT_CODE=%ERRORLEVEL%"
+if "%SEVEN_LABS_EXIT_CODE%"=="0" goto :finished
 
 echo.
-echo  BLANKIT could not start or stopped unexpectedly.
-echo  npm exited with code %BLANKIT_EXIT_CODE%.
+echo  The 7 Hermetic Labs preview could not start or stopped unexpectedly.
+echo  npm exited with code %SEVEN_LABS_EXIT_CODE%.
 echo  Review the message above, then press any key to close this window.
 pause >nul
-exit /b %BLANKIT_EXIT_CODE%
+exit /b %SEVEN_LABS_EXIT_CODE%
 
 :directory_error
 echo.
-echo  BLANKIT could not open its project folder:
-echo  %BLANKIT_ROOT%
+echo  The launcher could not open its project folder:
+echo  %SEVEN_LABS_ROOT%
 goto :failure_pause
 
 :node_missing
@@ -68,8 +68,8 @@ goto :failure_pause
 
 :node_old
 echo.
-echo  BLANKIT requires Node.js 20 or newer.
-echo  The detected major version is %BLANKIT_NODE_MAJOR%.
+echo  This site requires Node.js 20 or newer.
+echo  The detected major version is %SEVEN_LABS_NODE_MAJOR%.
 goto :failure_pause
 
 :npm_missing
@@ -81,13 +81,13 @@ goto :failure_pause
 :project_missing
 echo.
 echo  package.json was not found in:
-echo  %BLANKIT_ROOT%
-echo  Keep Start BLANKIT.bat in the BLANKIT project folder.
+echo  %SEVEN_LABS_ROOT%
+echo  Keep Start 7 Hermetic Labs.bat in the project folder.
 goto :failure_pause
 
 :build_error
 echo.
-echo  BLANKIT could not build the local preview. Review the error above.
+echo  The 7 Hermetic Labs site could not build the local preview. Review the error above.
 echo  The server was not started and no browser page was opened.
 goto :failure_pause
 
@@ -99,5 +99,5 @@ exit /b 1
 
 :finished
 echo.
-echo  BLANKIT preview stopped normally.
+echo  7 Hermetic Labs preview stopped normally.
 exit /b 0

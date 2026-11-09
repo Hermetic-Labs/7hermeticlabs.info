@@ -2,7 +2,7 @@
 
 ## Current surface
 
-BLANKIT builds one static public artifact. It contains two presentation modes inherited from Social Health:
+The site builds one static public artifact with a public landing page and two studio presentation modes inherited from Social Health:
 
 - the public-safe project console;
 - the contributor scorecard, activated only when a URL supplies `contributor`, `expires`, and `signature` parameters.
@@ -13,10 +13,10 @@ The public console reads only the existing sanitized contributor-board endpoint.
 
 ## Deployment requirements
 
-Before `blankit.dev` receives this build:
+Before a private studio is introduced at `studio.7hermeticlabs.info`:
 
 1. Confirm the canonical host and whether the current `noindex` policy remains.
-2. Permit the chosen BLANKIT origin on the public Graph endpoints or provide a same-origin read proxy.
+2. Permit the chosen 7 Hermetic Labs origin on the public Graph endpoints or provide a same-origin read proxy.
 3. Verify signed-link success, incomplete-link handling, expired/invalid access, and unavailable-service behavior from the deployed origin.
 4. Confirm every external build/reference URL remains intended for public use.
 5. Verify CSP, referrer policy, TLS, caching, and rollback behavior on the chosen host.

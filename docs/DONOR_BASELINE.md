@@ -10,7 +10,7 @@ The Git repository root is `D:\Minimax\sites\hermetic\7HermeticLaws.com`. The pr
 
 `71caa76` — **Refresh Social Health portfolio with Data Center Direct and R&D**
 
-At inspection time, local `main` and `origin/main` both pointed to that commit. The donor worktree also contained unrelated uncommitted `package.json`/VRF changes; Blankit did not modify or copy those changes. The commit is the rollback anchor. The original site, DNS, and repository were not changed.
+At inspection time, local `main` and `origin/main` both pointed to that commit. The donor worktree also contained unrelated uncommitted `package.json`/VRF changes; the migration did not modify or copy those changes. The commit is the rollback anchor. The original site, DNS, and repository were not changed.
 
 Important naming evidence: the framework is hosted under `7HermeticLaws.com/social-health/`, even though surrounding conversations sometimes called it the “7HermeticLabs” social framework. The source itself is the authority.
 
@@ -68,7 +68,7 @@ The backend confirms these reusable contracts:
 
 ## Styling and assets
 
-The donor is a dark, high-contrast console with signal green and an RGB identity. Its source includes a 7HL RGB mark plus project-specific marks, media, build links, and an IP library. These project assets and interaction surfaces are part of the migration baseline; the site-level identity is replaced separately by BLANKIT.
+The donor is a dark, high-contrast console with signal green and an RGB identity. Its source includes a 7HL RGB mark plus project-specific marks, media, build links, and an IP library. These project assets and interaction surfaces are part of the migration baseline; the site-level identity is now 7 Hermetic Labs.
 
 ## Evidence and rollback
 

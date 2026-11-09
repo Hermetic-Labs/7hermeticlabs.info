@@ -232,7 +232,7 @@
 
   function renderScorecard(data) {
     const contributorName = data.contributor && data.contributor.name ? data.contributor.name : 'Contributor';
-    document.title = `${contributorName} · BLANKIT contributor scorecard`;
+    document.title = `${contributorName} · 7 Hermetic Labs contributor scorecard`;
     setText('scorecardTitle', contributorName);
     setText('scorecardSubtitle', 'Track receipt, review, feedback, and the next action for every contribution.');
     setText('scorecardFreshness', `Live · ${formatDate(data.generatedAt, { hour: 'numeric', minute: '2-digit' })}`);

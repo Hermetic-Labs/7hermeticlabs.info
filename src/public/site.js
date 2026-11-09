@@ -38,15 +38,15 @@
         }
       },
       assets: [
-        { name: 'HALT', source: './assets/halt-mark.png', description: 'Current public product-family mark.', role: 'Product family' },
-        { name: 'HALT primary mark', source: './assets/ip-library/halt-primary-mark.png', description: 'Full HALT hand-and-wordmark composition retained as an approved source asset.', role: 'Product identity' },
-        { name: 'HALT horizontal banner', source: './assets/ip-library/halt-banner.png', description: 'Wide HALT lockup for horizontal placements.', role: 'Product banner', wide: true },
-        { name: 'HALT Windows banner', source: './assets/ip-library/halt-windows-banner.png', description: 'Windows-oriented HALT banner with the Developers Without Borders hand mark.', role: 'Platform banner', wide: true },
-        { name: 'Hermetic Labs symbol', source: './assets/ip-library/hermetic-labs-symbol.png', description: 'RGB geometric Hermetic Labs symbol on a transparent field.', role: 'Company identity' },
-        { name: 'Hermetic Labs banner', source: './assets/ip-library/hermetic-labs-banner.png', description: 'Horizontal Hermetic Labs wordmark for dark backgrounds.', role: 'Company identity', wide: true },
-        { name: 'Hermetic Labs icon', source: './assets/ip-library/hermetic-labs-icon.png', description: 'Metallic Hermetic Labs figure-and-light icon.', role: 'Company icon' },
-        { name: 'Developers Without Borders', source: './assets/ip-library/developers-without-borders-mark.png', description: 'Humanitarian development initiative mark.', role: 'Initiative identity' },
-        { name: 'Developers Without Borders pledge', source: './assets/ip-library/developers-without-borders-pledge.png', description: 'Printable pledge certificate retained with the HALT humanitarian identity set.', role: 'Pledge certificate' }
+        { name: 'HALT', source: '../assets/halt-mark.png', description: 'Current public product-family mark.', role: 'Product family' },
+        { name: 'HALT primary mark', source: '../assets/ip-library/halt-primary-mark.png', description: 'Full HALT hand-and-wordmark composition retained as an approved source asset.', role: 'Product identity' },
+        { name: 'HALT horizontal banner', source: '../assets/ip-library/halt-banner.png', description: 'Wide HALT lockup for horizontal placements.', role: 'Product banner', wide: true },
+        { name: 'HALT Windows banner', source: '../assets/ip-library/halt-windows-banner.png', description: 'Windows-oriented HALT banner with the Developers Without Borders hand mark.', role: 'Platform banner', wide: true },
+        { name: 'Hermetic Labs symbol', source: '../assets/ip-library/hermetic-labs-symbol.png', description: 'RGB geometric Hermetic Labs symbol on a transparent field.', role: 'Company identity' },
+        { name: 'Hermetic Labs banner', source: '../assets/ip-library/hermetic-labs-banner.png', description: 'Horizontal Hermetic Labs wordmark for dark backgrounds.', role: 'Company identity', wide: true },
+        { name: 'Hermetic Labs icon', source: '../assets/ip-library/hermetic-labs-icon.png', description: 'Metallic Hermetic Labs figure-and-light icon.', role: 'Company icon' },
+        { name: 'Developers Without Borders', source: '../assets/ip-library/developers-without-borders-mark.png', description: 'Humanitarian development initiative mark.', role: 'Initiative identity' },
+        { name: 'Developers Without Borders pledge', source: '../assets/ip-library/developers-without-borders-pledge.png', description: 'Printable pledge certificate retained with the HALT humanitarian identity set.', role: 'Pledge certificate' }
       ]
     },
     vulpine: {
@@ -85,9 +85,9 @@
         }
       },
       assets: [
-        { name: 'Courier Services', source: './assets/vulpine-mark.png', description: 'Existing fox-and-AI identity retained through the Courier Services rename.', role: 'Product identity' },
-        { name: 'Hermetic Labs symbol', source: './assets/ip-library/hermetic-labs-symbol.png', description: 'RGB geometric Hermetic Labs symbol for company attribution.', role: 'Company identity' },
-        { name: 'Hermetic Labs banner', source: './assets/ip-library/hermetic-labs-banner.png', description: 'Horizontal Hermetic Labs wordmark for dark-background placements.', role: 'Company banner', wide: true }
+        { name: 'Courier Services', source: '../assets/vulpine-mark.png', description: 'Existing fox-and-AI identity retained through the Courier Services rename.', role: 'Product identity' },
+        { name: 'Hermetic Labs symbol', source: '../assets/ip-library/hermetic-labs-symbol.png', description: 'RGB geometric Hermetic Labs symbol for company attribution.', role: 'Company identity' },
+        { name: 'Hermetic Labs banner', source: '../assets/ip-library/hermetic-labs-banner.png', description: 'Horizontal Hermetic Labs wordmark for dark-background placements.', role: 'Company banner', wide: true }
       ]
     },
     vrf: {
@@ -112,12 +112,12 @@
         path: 'Four capability limbs → Bundle torso → Unleashed inbound → Veritas outbound',
         referenceUrl: 'https://virtualrealityfatality.com/',
         cards: [
-          { title: 'Movement', state: 'Available on Fab', tone: 'current', image: './assets/vrf-showcase/movement.jpg', alt: 'VRF Volume 1 Movement artwork with a VR character and locomotion feature names', copy: 'Locomotion, body, pose, climbing, swimming, flight, and physical interaction foundations.', href: 'https://www.fab.com/listings/2f944cd3-c998-4e00-b90e-26866e26d432', linkLabel: 'Open Movement on Fab' },
-          { title: 'Weapons', state: 'Available on Fab', tone: 'current', image: './assets/vrf-showcase/weapons.jpg', alt: 'VRF Volume 2 Weapons artwork showing VR hands, pistols, and ammunition', copy: 'Physical firearms, ammunition, attachments, reloading, and two-handed combat interaction.', href: 'https://www.fab.com/listings/1866e14e-8b87-486a-bbe2-262b2ae39342', linkLabel: 'Open Weapons on Fab' },
-          { title: 'Vehicles', state: 'Available on Fab', tone: 'current', image: './assets/vrf-showcase/vehicles.jpg', alt: 'VRF Volume 3 Cars artwork showing a stylized vehicle and VR driver', copy: 'Driveable systems, seats, controls, doors, cameras, and vehicle-state foundations.', href: 'https://www.fab.com/listings/01a12f16-02ce-4d97-961d-8e367a4349bc', linkLabel: 'Open Vehicles on Fab' },
-          { title: 'AI E.v.E', state: 'Historical public release', tone: 'history', image: './assets/vrf-showcase/ai-eve.jpg', alt: 'Thumbnail from the public VRF Volume 4 NPC demonstration', copy: 'NPC behavior, perception, expression, embodiment, and later conversational experiments.', href: 'https://www.youtube.com/watch?v=IoOVCA3xdgU', linkLabel: 'Watch the public record' },
-          { title: 'Bundle', state: 'Historical public release', tone: 'history', image: './assets/vrf-showcase/bundle.jpg', alt: 'Thumbnail from the public VRF Bundle demonstration', copy: 'The torso: a composition of foundation capabilities into replicated example experiences.', href: 'https://www.youtube.com/watch?v=HsHhoJvsJog', linkLabel: 'Watch the public record' },
-          { title: 'Unleashed', state: 'Historical public teaser', tone: 'history', image: './assets/vrf-showcase/unleashed.jpg', alt: 'Thumbnail from the public VRF Unleashed teaser', copy: 'The inbound gateway now defined to bring EVE modules and external systems into Unreal.', href: 'https://www.youtube.com/watch?v=3I9MpV3nZco', linkLabel: 'Watch the teaser' }
+          { title: 'Movement', state: 'Available on Fab', tone: 'current', image: '../assets/vrf-showcase/movement.jpg', alt: 'VRF Volume 1 Movement artwork with a VR character and locomotion feature names', copy: 'Locomotion, body, pose, climbing, swimming, flight, and physical interaction foundations.', href: 'https://www.fab.com/listings/2f944cd3-c998-4e00-b90e-26866e26d432', linkLabel: 'Open Movement on Fab' },
+          { title: 'Weapons', state: 'Available on Fab', tone: 'current', image: '../assets/vrf-showcase/weapons.jpg', alt: 'VRF Volume 2 Weapons artwork showing VR hands, pistols, and ammunition', copy: 'Physical firearms, ammunition, attachments, reloading, and two-handed combat interaction.', href: 'https://www.fab.com/listings/1866e14e-8b87-486a-bbe2-262b2ae39342', linkLabel: 'Open Weapons on Fab' },
+          { title: 'Vehicles', state: 'Available on Fab', tone: 'current', image: '../assets/vrf-showcase/vehicles.jpg', alt: 'VRF Volume 3 Cars artwork showing a stylized vehicle and VR driver', copy: 'Driveable systems, seats, controls, doors, cameras, and vehicle-state foundations.', href: 'https://www.fab.com/listings/01a12f16-02ce-4d97-961d-8e367a4349bc', linkLabel: 'Open Vehicles on Fab' },
+          { title: 'AI E.v.E', state: 'Historical public release', tone: 'history', image: '../assets/vrf-showcase/ai-eve.jpg', alt: 'Thumbnail from the public VRF Volume 4 NPC demonstration', copy: 'NPC behavior, perception, expression, embodiment, and later conversational experiments.', href: 'https://www.youtube.com/watch?v=IoOVCA3xdgU', linkLabel: 'Watch the public record' },
+          { title: 'Bundle', state: 'Historical public release', tone: 'history', image: '../assets/vrf-showcase/bundle.jpg', alt: 'Thumbnail from the public VRF Bundle demonstration', copy: 'The torso: a composition of foundation capabilities into replicated example experiences.', href: 'https://www.youtube.com/watch?v=HsHhoJvsJog', linkLabel: 'Watch the public record' },
+          { title: 'Unleashed', state: 'Historical public teaser', tone: 'history', image: '../assets/vrf-showcase/unleashed.jpg', alt: 'Thumbnail from the public VRF Unleashed teaser', copy: 'The inbound gateway now defined to bring EVE modules and external systems into Unreal.', href: 'https://www.youtube.com/watch?v=3I9MpV3nZco', linkLabel: 'Watch the teaser' }
         ]
       },
       pulse: {
@@ -148,11 +148,11 @@
       },
       assetLibraryDescription: 'Five reusable VRF and Hermetic Labs identity assets for Susan’s content workflow. Product imagery remains in the separate curation view until selected for a specific campaign.',
       assets: [
-        { name: 'VRF primary mark', source: './assets/vrf-mark.png', description: 'Canonical high-resolution mark for the VRF product family.', role: 'Product family', status: 'Ready for content' },
-        { name: 'VRF channel avatar', source: './assets/vrf-showcase/vrf-channel-avatar.jpg', description: 'Established VRF character/avatar from the public YouTube channel. Use when the historical channel identity is relevant.', role: 'Channel identity', status: 'Ready with context' },
-        { name: 'Hermetic Labs channel banner', source: './assets/vrf-showcase/vrf-channel-banner.jpg', description: 'Wide banner recovered from the public VRF YouTube channel for channel and landscape placements.', role: 'Channel banner', status: 'Ready for content', wide: true },
-        { name: 'Hermetic Labs symbol', source: './assets/ip-library/hermetic-labs-symbol.png', description: 'RGB geometric Hermetic Labs symbol on a transparent field.', role: 'Company identity', status: 'Ready for content' },
-        { name: 'Hermetic Labs horizontal banner', source: './assets/ip-library/hermetic-labs-banner.png', description: 'Compact transparent Hermetic Labs wordmark for dark horizontal placements.', role: 'Company banner', status: 'Ready for content', wide: true }
+        { name: 'VRF primary mark', source: '../assets/vrf-mark.png', description: 'Canonical high-resolution mark for the VRF product family.', role: 'Product family', status: 'Ready for content' },
+        { name: 'VRF channel avatar', source: '../assets/vrf-showcase/vrf-channel-avatar.jpg', description: 'Established VRF character/avatar from the public YouTube channel. Use when the historical channel identity is relevant.', role: 'Channel identity', status: 'Ready with context' },
+        { name: 'Hermetic Labs channel banner', source: '../assets/vrf-showcase/vrf-channel-banner.jpg', description: 'Wide banner recovered from the public VRF YouTube channel for channel and landscape placements.', role: 'Channel banner', status: 'Ready for content', wide: true },
+        { name: 'Hermetic Labs symbol', source: '../assets/ip-library/hermetic-labs-symbol.png', description: 'RGB geometric Hermetic Labs symbol on a transparent field.', role: 'Company identity', status: 'Ready for content' },
+        { name: 'Hermetic Labs horizontal banner', source: '../assets/ip-library/hermetic-labs-banner.png', description: 'Compact transparent Hermetic Labs wordmark for dark horizontal placements.', role: 'Company banner', status: 'Ready for content', wide: true }
       ]
     },
     fefe: {
@@ -190,7 +190,7 @@
           membership: { label: 'Membership experience', summary: 'Application, review, activation, privacy, and community expectations.', truth: 'Applicants apply before payment; approved applicants can activate a fixed monthly membership.', boundary: 'Use current published pricing and terms only. Approval does not guarantee introductions or outcomes.' }
         }
       },
-      assets: [{ name: 'FEFE Connect', source: './assets/fefe-connect-mark.png', description: 'Current public wordmark from the FEFE Connect site.', role: 'Service identity', wide: true }]
+      assets: [{ name: 'FEFE Connect', source: '../assets/fefe-connect-mark.png', description: 'Current public wordmark from the FEFE Connect site.', role: 'Service identity', wide: true }]
     },
     eve: {
       index: '05',
@@ -228,9 +228,9 @@
         }
       },
       assets: [
-        { name: 'Eve OS', source: './assets/eve-os-wordmark.png', description: 'Existing chromatic wordmark retained for identity reference.', role: 'Product identity', wide: true },
-        { name: 'Hermetic Labs Exchange', source: './assets/exchange-mark.png', description: 'Existing RGB ring mark retained as the marketplace reference.', role: 'Marketplace identity' },
-        { name: 'Exchange transparent mark', source: './assets/ip-library/exchange-logo-transparent.png', description: 'Transparent-background Exchange source mark retained for alternate placements.', role: 'Marketplace identity' }
+        { name: 'Eve OS', source: '../assets/eve-os-wordmark.png', description: 'Existing chromatic wordmark retained for identity reference.', role: 'Product identity', wide: true },
+        { name: 'Hermetic Labs Exchange', source: '../assets/exchange-mark.png', description: 'Existing RGB ring mark retained as the marketplace reference.', role: 'Marketplace identity' },
+        { name: 'Exchange transparent mark', source: '../assets/ip-library/exchange-logo-transparent.png', description: 'Transparent-background Exchange source mark retained for alternate placements.', role: 'Marketplace identity' }
       ]
     },
     abbe: {
@@ -269,9 +269,9 @@
         }
       },
       assets: [
-        { name: 'Abbé Faria', source: './assets/abbe-faria-mark.png', description: 'Current project mark from the public Abbé Faria brief.', role: 'Project identity' },
-        { name: 'Hermetic Labs symbol', source: './assets/ip-library/hermetic-labs-symbol.png', description: 'RGB geometric Hermetic Labs symbol for company attribution.', role: 'Company identity' },
-        { name: 'Hermetic Labs banner', source: './assets/ip-library/hermetic-labs-banner.png', description: 'Horizontal Hermetic Labs wordmark for dark-background placements.', role: 'Company banner', wide: true }
+        { name: 'Abbé Faria', source: '../assets/abbe-faria-mark.png', description: 'Current project mark from the public Abbé Faria brief.', role: 'Project identity' },
+        { name: 'Hermetic Labs symbol', source: '../assets/ip-library/hermetic-labs-symbol.png', description: 'RGB geometric Hermetic Labs symbol for company attribution.', role: 'Company identity' },
+        { name: 'Hermetic Labs banner', source: '../assets/ip-library/hermetic-labs-banner.png', description: 'Horizontal Hermetic Labs wordmark for dark-background placements.', role: 'Company banner', wide: true }
       ]
     },
     dcd: {
@@ -327,8 +327,8 @@
         }
       },
       assets: [
-        { name: 'Hermetic Labs symbol', source: './assets/ip-library/hermetic-labs-symbol.png', description: 'Company attribution for Data Center Direct content; this is the Hermetic Labs symbol, not a separate product logo.', role: 'Company identity' },
-        { name: 'Hermetic Labs banner', source: './assets/ip-library/hermetic-labs-banner.png', description: 'Company wordmark for approved horizontal placements.', role: 'Company banner', wide: true }
+        { name: 'Hermetic Labs symbol', source: '../assets/ip-library/hermetic-labs-symbol.png', description: 'Company attribution for Data Center Direct content; this is the Hermetic Labs symbol, not a separate product logo.', role: 'Company identity' },
+        { name: 'Hermetic Labs banner', source: '../assets/ip-library/hermetic-labs-banner.png', description: 'Company wordmark for approved horizontal placements.', role: 'Company banner', wide: true }
       ]
     },
     rd: {
@@ -360,8 +360,8 @@
         }
       },
       assets: [
-        { name: 'Hermetic Labs symbol', source: './assets/ip-library/hermetic-labs-symbol.png', description: 'Company identity for sanitized research communication.', role: 'Company identity' },
-        { name: 'Hermetic Labs banner', source: './assets/ip-library/hermetic-labs-banner.png', description: 'Company wordmark for research overview placements.', role: 'Company banner', wide: true }
+        { name: 'Hermetic Labs symbol', source: '../assets/ip-library/hermetic-labs-symbol.png', description: 'Company identity for sanitized research communication.', role: 'Company identity' },
+        { name: 'Hermetic Labs banner', source: '../assets/ip-library/hermetic-labs-banner.png', description: 'Company wordmark for research overview placements.', role: 'Company banner', wide: true }
       ]
     }
   };

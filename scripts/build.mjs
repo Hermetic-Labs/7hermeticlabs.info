@@ -9,5 +9,5 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 await cp(path.join(root, "src", "public"), path.join(dist, "public"), { recursive: true });
 
-console.log("Built the migrated BLANKIT Social Health site in dist/public.");
+console.log("Built the 7 Hermetic Labs public front door and communications studio in dist/public.");
 

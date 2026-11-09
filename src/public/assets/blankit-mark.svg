@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title desc">
-  <title id="title">BLANKIT folded-cover mark</title>
-  <desc id="desc">Three red, green, and blue cover bands folded toward the right.</desc>
-  <rect width="192" height="192" rx="22" fill="#080a0f"/>
-  <path d="M30 32h83l48 26-48 26H30z" fill="#e74738" stroke="#f7f5ef" stroke-width="3"/>
-  <path d="M30 72h83l48 26-48 26H30z" fill="#43a06f" stroke="#f7f5ef" stroke-width="3"/>
-  <path d="M30 112h83l48 26-48 26H30z" fill="#397fc9" stroke="#f7f5ef" stroke-width="3"/>
-  <path d="M113 32v132l48-26V58z" fill="#f7f5ef" fill-opacity=".16" stroke="#f7f5ef" stroke-width="3"/>
-</svg>

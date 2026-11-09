@@ -7,7 +7,7 @@ import { openReadyPreview } from "./open-preview.mjs";
 const root = resolve(fileURLToPath(new URL("../dist/public", import.meta.url)));
 const port = Number(process.env.PORT || 4173);
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
-  console.error("BLANKIT PORT must be a whole number from 1 to 65535.");
+  console.error("The preview PORT must be a whole number from 1 to 65535.");
   process.exit(1);
 }
 const types = {
@@ -46,19 +46,19 @@ const server = createServer(async (request, response) => {
 
 server.on("error", (error) => {
   console.error(error.code === "EADDRINUSE"
-    ? `BLANKIT could not start: port ${port} is already in use. Stop the other preview or choose another PORT. No browser was opened.`
-    : `BLANKIT could not start: ${error.message}`);
+    ? `The 7 Hermetic Labs preview could not start: port ${port} is already in use. Stop the other preview or choose another PORT. No browser was opened.`
+    : `The 7 Hermetic Labs preview could not start: ${error.message}`);
   process.exitCode = 1;
 });
 
 server.listen(port, "127.0.0.1", async () => {
-  console.log(`Blankit local preview: http://127.0.0.1:${port}`);
+  console.log(`7 Hermetic Labs local preview: http://127.0.0.1:${port}`);
   if (process.argv.includes("--open")) {
     try {
       await openReadyPreview(`http://127.0.0.1:${port}/`);
-      console.log("Public page ready; opened in your default browser. Keep this console open while using BLANKIT.");
+      console.log("Public page ready; opened in your default browser. Keep this console open while using the site.");
     } catch (error) {
-      console.error(`BLANKIT could not open the public preview: ${error.message}`);
+      console.error(`The 7 Hermetic Labs preview could not open: ${error.message}`);
       server.close();
       process.exitCode = 1;
     }

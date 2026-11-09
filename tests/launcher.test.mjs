@@ -8,7 +8,9 @@ async function fixture(t, missingPath) {
   const server = createServer((request, response) => {
     requests.push(request.url);
     const entries = {
-      "/": ["text/html", "<title>BLANKIT — Social Health</title>"],
+      "/": ["text/html", "<title>7 Hermetic Labs — Public Communications</title>"],
+      "/studio/": ["text/html", "<title>7 Hermetic Labs — Communications Studio</title>"],
+      "/landing.css": ["text/css", ".signal-card {}"],
       "/site.css": ["text/css", ":root {}"],
       "/scorecard.css": ["text/css", ".contributor-workspace {}"],
       "/site.js": ["text/javascript", "const projects = {};"],
@@ -27,7 +29,7 @@ test("browser opens once, only the public root, after all readiness responses", 
   const { requests, origin } = await fixture(t);
   const opened = [];
   await openReadyPreview(origin, async (url) => {
-    assert.deepEqual(requests, ["/", "/site.css", "/scorecard.css", "/site.js", "/scorecard.js"]);
+    assert.deepEqual(requests, ["/", "/studio/", "/landing.css", "/site.css", "/scorecard.css", "/site.js", "/scorecard.js"]);
     opened.push(url);
   });
   assert.deepEqual(opened, [origin]);
@@ -42,12 +44,12 @@ test("a transient loopback fetch failure is retried before browser launch", asyn
     if (attempts === 1) throw new TypeError("fetch failed");
     return fetch(...args);
   });
-  assert.equal(attempts, 6);
+  assert.equal(attempts, 8);
   assert.deepEqual(opened, [origin]);
 });
 
 test("missing page or asset prevents browser launch", async (t) => {
-  for (const missing of ["/", "/site.css", "/scorecard.css", "/site.js", "/scorecard.js"]) {
+  for (const missing of ["/", "/studio/", "/landing.css", "/site.css", "/scorecard.css", "/site.js", "/scorecard.js"]) {
     const { origin } = await fixture(t, missing);
     let opened = false;
     await assert.rejects(openReadyPreview(origin, async () => { opened = true; }), /readiness check failed/);
@@ -57,7 +59,7 @@ test("missing page or asset prevents browser launch", async (t) => {
 
 test("nonlocal and private URLs cannot be opened by the readiness helper", async () => {
   for (const url of ["https://example.com/", "http://127.0.0.1:4173/workspace/"]) {
-    await assert.rejects(openReadyPreview(url, async () => assert.fail("must not open")), /Only the local public/);
+    await assert.rejects(openReadyPreview(url, async () => assert.fail("must not open")), /Only the local 7 Hermetic Labs public page/);
   }
 });
 

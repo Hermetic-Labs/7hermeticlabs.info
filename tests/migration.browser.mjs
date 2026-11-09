@@ -57,13 +57,20 @@ await page.route('https://graph.7hermeticlabs.com/**', async (route) => {
   await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(body) });
 });
 
-const publicUrl = `file://${path.join(root, '..', 'src', 'public', 'index.html')}`;
+const landingUrl = `file://${path.join(root, '..', 'src', 'public', 'index.html')}`;
+await page.goto(landingUrl, { waitUntil: 'networkidle' });
+if ((await page.title()) !== '7 Hermetic Labs — Public Communications') errors.push('Landing page title is incorrect');
+if ((await page.locator('.portfolio-grid li').count()) !== 8) errors.push('Landing page portfolio does not contain eight projects');
+if (!(await page.getByRole('link', { name: 'Enter the communications studio' }).getAttribute('href')).includes('studio/')) errors.push('Landing page does not link to the studio');
+if ((await page.locator('body').innerText()).toLowerCase().includes('blankit')) errors.push('Retired identity appears on the landing page');
+
+const publicUrl = `file://${path.join(root, '..', 'src', 'public', 'studio', 'index.html')}`;
 await page.goto(publicUrl, { waitUntil: 'networkidle' });
 await page.locator('.campaign-card-public').waitFor({ state: 'attached' });
 
-if ((await page.title()) !== 'BLANKIT — Social Health') errors.push('Public page title is incorrect');
-if (!(await page.locator('link[href*="site.css?v=20261109-1"]').count())) errors.push('Site stylesheet cache marker is missing');
-if (!(await page.locator('script[src*="site.js?v=20261109-1"]').count())) errors.push('Site script cache marker is missing');
+if ((await page.title()) !== '7 Hermetic Labs — Communications Studio') errors.push('Studio page title is incorrect');
+if (!(await page.locator('link[href*="site.css?v=20261109-2"]').count())) errors.push('Site stylesheet cache marker is missing');
+if (!(await page.locator('script[src*="site.js?v=20261109-2"]').count())) errors.push('Site script cache marker is missing');
 if (!(await page.locator('#publicConsole').isVisible())) errors.push('Public console is not visible');
 if (!(await page.locator('#contributorWorkspace').isHidden())) errors.push('Contributor workspace appeared without a signed link');
 if ((await page.locator('.project-tab').count()) !== 8) errors.push('Expected eight project lanes');
@@ -77,7 +84,7 @@ if ((await page.locator('#tab-halt').getAttribute('href')) !== null) errors.push
 if (await page.evaluate(() => Array.from(document.querySelectorAll('[download]')).some((node) => !node.closest('.project-assets')))) errors.push('A download control remains outside Project iconology');
 if ((await page.locator('#projectAssetGrid .project-asset-card').count()) !== 9) errors.push('HALT icon and IP library did not render all nine source assets in its lane');
 if (!(await page.locator('#projectAssetGrid img[src$="halt-mark.png"]').count())) errors.push('HALT mark is not wired into the HALT lane');
-if (!(await page.locator('.brand-logo').getAttribute('src')).includes('blankit-mark.svg')) errors.push('BLANKIT site logo is not wired into the header');
+if (!(await page.locator('.brand-logo').getAttribute('src')).includes('hermetic-labs-icon.png')) errors.push('7 Hermetic Labs site logo is not wired into the header');
 
 await page.locator('#tab-vulpine').click();
 if ((await page.locator('#projectName').textContent()) !== 'Courier Services') errors.push('Courier rename did not update the panel');
@@ -298,4 +305,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log('BLANKIT Social Health migration browser checks passed.');
+console.log('7 Hermetic Labs communications studio browser checks passed.');

@@ -1,13 +1,13 @@
-# BLANKIT identity in Social Health
+# 7 Hermetic Labs communications identity
 
 ## Lockup
 
-The site identity is **BLANKIT**, with **Social Health** as the product qualifier. The folded-cover mark uses red, green, and blue layers on the migrated donor's dark console. The phrase *We got you covered.* appears in the release-boundary identity card.
+The site identity is **7 Hermetic Labs**, with **Public Communications** for the front door and **Communications Studio** for the working surface. The established Hermetic Labs icon, symbol, and horizontal banner are the site-level identity.
 
-The BLANKIT mark lives at `src/public/assets/blankit-mark.svg`; the social preview composition lives at `src/public/assets/blankit-social-health-og.svg`.
+The primary site assets live under `src/public/assets/ip-library/` as `hermetic-labs-icon.png`, `hermetic-labs-symbol.png`, and `hermetic-labs-banner.png`.
 
 ## Content identity
 
-Project marks and Hermetic Labs attribution inside project lanes remain content owned by those projects. They are not the BLANKIT site identity. The header, metadata, footer, site mark, canonical destination, and contributor document title use BLANKIT.
+Project marks remain content owned by those projects. The header, metadata, footer, canonical destination, and contributor document title use 7 Hermetic Labs. The public landing page explains the communications boundary; the studio keeps each project in its own lane.
 
 The migration retains the donor's dark high-contrast layout, signal-green state color, project-first navigation, focused workspaces, and scorecard presentation.

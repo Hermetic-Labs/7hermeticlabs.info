@@ -1,4 +1,4 @@
-name: Deploy BLANKIT to GitHub Pages
+name: Deploy 7 Hermetic Labs to GitHub Pages
 
 on:
   push:
