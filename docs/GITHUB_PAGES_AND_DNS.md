@@ -30,12 +30,14 @@ Optional IPv6 records:
 | AAAA | `@` | `2606:50c0:8002::153` | Automatic |
 | AAAA | `@` | `2606:50c0:8003::153` | Automatic |
 
-## Parking records to remove
+## Removed parking record
 
-GoDaddy also created these parking A records, which conflict with GitHub Pages and must not remain at the apex:
+GoDaddy originally created a single `A @ → Parked` record that expanded to these conflicting addresses:
 
 - A `@` → `15.197.148.33`
 - A `@` → `3.33.130.190`
+
+That parking record was removed on 2026-11-09. The authoritative apex now returns only the four GitHub Pages addresses listed above.
 
 Preserve unrelated verification or mail records if they are added later.
 
